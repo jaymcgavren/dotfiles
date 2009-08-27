@@ -1,0 +1,11 @@
+require 'rubygems'
+
+begin
+  require 'factories/factories'
+rescue Exception => exception
+  STDERR.puts exception.message
+end
+
+#Output SQL queries, etc. to terminal.  (Via Ryan Bates)
+require 'activerecord'
+ActiveRecord::Base.logger = Logger.new(STDOUT)
