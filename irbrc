@@ -1,12 +1,18 @@
-require 'rubygems'
+%w{rubygems wirble hirb irb/completion irb/ext/save-history}.each do |lib|
+  begin
+    require lib
+  rescue LoadError => err
+    $stderr.puts "Couldn't load #{lib}: #{err}"
+  end
+end
 
-require 'irb/completion'
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
-require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 50000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 
-require 'hirb'
+Wirble.init
+Wirble.colorize
+
 extend Hirb::Console
 Hirb::View.enable

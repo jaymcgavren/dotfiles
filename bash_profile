@@ -1,4 +1,4 @@
-#Get the aliases and functions.
+#Get aliases and functions.
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
@@ -49,7 +49,7 @@ alias status='git status'
 
 #The command line prompt.
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
 esac
 if [ "$color_prompt" = yes ]; then
     export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
