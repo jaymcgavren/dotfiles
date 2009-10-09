@@ -37,15 +37,26 @@ shopt -s histappend
 
 #Aliases.
 alias add='git add'
+alias alert='growlnotify -s'
 alias am='twtr up -m'
 alias clear='ruby -e "puts %Q{\n} * 80"'
 alias commit='git commit'
 alias jrake='jruby -S rake'
 alias l='ls -alF'
+alias player='/Applications/VLC.app/Contents/MacOS/VLC'
 alias pull='git pull'
 alias push='git push'
 alias serve_this_dir='python -m SimpleHTTPServer'
 alias status='git status'
+
+
+#Functions.
+function gitrm {
+    git status | grep 'deleted' | awk '{print $3}' | xargs git rm
+}
+function toss {
+    mv $* $HOME/.Trash
+}
 
 #The command line prompt.
 case "$TERM" in
