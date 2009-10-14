@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+require 'rubygems'
+require 'fileutils'
+require 'exifr'
+
+ARGV.each do |file|
+  begin
+    date = EXIFR::JPEG.new(file).date_time_original
+    dir = sprintf('%04d-%02d-%02d', date.year, date.month, date.mday)
+    Dir.mkdir(dir) unless File.exist?(dir)
+    FileUtils.mv(file, dir)
+  rescue => exception
+    abort "Error processing #{file}: " + exception.message + "\n" + exception.backtrace.join("\n")
+  end
+end

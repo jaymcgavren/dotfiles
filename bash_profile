@@ -8,8 +8,10 @@ fi
 
 #Path setup.
 export PATH=${HOME}/bin:${PATH}
+export PATH=${HOME}/dotfiles/bin:${PATH}
+export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
+export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
 export PATH=${HOME}/Shortcuts:${PATH}
-export RUBYLIB=~/ruby/lib
 
 #Command line editing options.
 set -o emacs

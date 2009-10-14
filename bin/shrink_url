@@ -1,0 +1,2 @@
+#!/bin/sh
+curl "http://is.gd/api.php?longurl=$(echo $@ | sed 's/\ /+/g')"

@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+require 'utility'
+
+util = Util.new
+Utility::Email::Email.new(
+  :senders => [util.load(:home_email)],
+  :recipients => [util.load(:work_email)],
+  :subject => "Note: #{ARGV.join(' ')}",
+  :body => util.get_piped_data
+).send

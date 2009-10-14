@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync --recursive $1 $BACKUP_PATH/$HOSTNAME/

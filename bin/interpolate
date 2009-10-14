@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+
+require 'utility/all'
+
+print Util.new.get_piped_data.interpolate

@@ -1,0 +1,2 @@
+#!/bin/sh
+cat > ~/.old_diff

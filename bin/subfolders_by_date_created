@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+
+require 'fileutils'
+
+ARGV.each do |file|
+  begin
+    date = File.new(file).ctime
+    dir = sprintf('%04d-%02d-%02d', date.year, date.month, date.mday)
+    Dir.mkdir(dir) unless File.exist?(dir)
+    FileUtils.mv(file, dir)
+  rescue => exception
+    abort "Error processing #{file}: " + exception.message + "\n" + exception.backtrace.join("\n")
+  end
+end

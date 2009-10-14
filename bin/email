@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+
+require 'utility'
+
+util = Util.new
+util.parse_rfc822(util.get_piped_data).send

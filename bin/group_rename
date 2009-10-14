@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+require 'utility'
+require 'fileutils'
+
+#Get options.
+usage = <<-EOD
+Usage: group_rename.rb <expression> <files>
+<expression> is a Ruby expression that returns the new file name.
+Within <expression>, you can use the 'path' variable to get the current file's path.
+EOD
+expression = ARGV.empty? ? raise(usage) : ARGV.shift
+globs = ARGV.empty? ? raise(usage) : ARGV
+
+#For each file in expanded globs:
+globs.each do |glob|
+  Dir.glob(glob).each do |path|
+    #Evaluate the expression.
+    new_path = eval(expression).to_s
+    #If the resulting filename is identical to the current filename, skip it.
+    next if path == new_path
+    #Windows workaround: if filenames differ only in case, move it to temp file first.
+    if path.downcase == new_path.downcase
+      FileUtils.mv(path, path + ".tmp")
+      FileUtils.mv(path + ".tmp", new_path)
+    #Otherwise, simply move file.
+    else
+      FileUtils.mv(path, new_path)
+    end
+  end
+end

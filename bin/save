@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+require 'utility'
+
+util = Util.new
+storage = util.load(:storage) || {}
+storage[ARGV.join(' ')] = util.get_piped_data
+util.save(:storage, storage)

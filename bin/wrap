@@ -1,0 +1,24 @@
+#!/opt/local/bin/perl
+
+#Get command line options.
+$wrap_column = $ARGV[0] || 60;
+
+#Set up text wrap options.
+use Text::Wrap;
+use Text::Tabs;
+$Text::Wrap::columns = $wrap_column;
+
+#Process each input line.
+LINE: while (<STDIN>) {
+
+  #Clean up line.
+  chomp;
+  
+  #Get existing indentation to use on subsequent lines.
+  if (/^(\s+)/) {$indentation = $1}
+  else {$indentation = undef}
+  
+  #Wrap text and print.
+  print expand(wrap(undef, $indentation, $_)) . "\n";
+  
+}

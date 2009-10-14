@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+require 'rinda/rinda'
+
+usage = "write_space key value [url]"
+
+key = ARGV[0] || fail(usage)
+uri = ARGV[1] || "druby://127.0.0.1:74632"
+value = STDIN.read
+
+DRb.start_service 
+space = Rinda::TupleSpaceProxy.new(DRbObject.new(nil, uri))
+space.write([key, value])

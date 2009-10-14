@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+input = STDIN.isatty ? nil : STDIN.read
+if input
+  case RUBY_PLATFORM
+  when /darwin/
+    IO.popen('pbcopy', 'w').print(input)
+  when /linux/
+    IO.popen('xclip', 'w').print(input)
+  end
+else
+  case RUBY_PLATFORM
+  when /darwin/
+    print `pbpaste`
+  when /linux/
+    print `xclip -o`
+  end
+end

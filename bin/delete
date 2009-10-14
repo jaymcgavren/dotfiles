@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+require 'utility'
+
+util = Util.new
+storage = util.load(:storage)
+storage.delete(ARGV.join(' '))
+util.save(:storage, storage)

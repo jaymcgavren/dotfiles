@@ -1,0 +1,3 @@
+#!/usr/bin/ruby
+require 'utility'
+print Util.new.get_piped_data.shorthand

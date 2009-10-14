@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+
+require 'utility'
+
+puts Util.new.get_piped_data.indent_xml

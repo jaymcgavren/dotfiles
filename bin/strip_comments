@@ -1,0 +1,2 @@
+#!/usr/bin/ruby
+STDIN.each{|line| print line unless line =~ /^\s*\#/}

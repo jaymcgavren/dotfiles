@@ -1,0 +1,2 @@
+#!/usr/bin/ruby
+puts STDIN.map{|l| l.chomp}.join(' ')

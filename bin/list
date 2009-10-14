@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+require 'utility'
+
+util = Util.new
+print util.load(:storage).keys.sort.join("\n")
