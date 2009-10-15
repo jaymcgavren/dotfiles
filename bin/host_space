@@ -1,0 +1,10 @@
+#!/usr/bin/ruby
+
+require 'rinda/tuplespace'
+
+usage = "host_space [url]"
+
+uri = ARGV[0] || "druby://127.0.0.1:74632"
+
+DRb.start_service(uri, Rinda::TupleSpace.new) 
+DRb.thread.join
