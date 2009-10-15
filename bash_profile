@@ -57,7 +57,13 @@ function gitrm {
     git status | grep 'deleted' | awk '{print $3}' | xargs git rm
 }
 function toss {
-    mv $* $HOME/.Trash
+    for filename; do
+        if [ -e $HOME/.Trash/$filename ]; then
+            mv $* $HOME/.Trash/$filename$(date +%Y%m%d%H%M%S)
+        else
+            mv $* $HOME/.Trash
+        fi
+    done
 }
 
 #The command line prompt.
