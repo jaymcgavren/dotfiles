@@ -27,7 +27,7 @@ export CLICOLOR=1 #Colorizes output of ls and others.
 export EDITOR='/usr/bin/mate -w'
 export VISUAL=$EDITOR
 export PAGER=less
-export LESS='-P%f (%i/%m) Line %lt/%L'
+export LESS='-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
 
 export ENV=$HOME/.bashrc
 
