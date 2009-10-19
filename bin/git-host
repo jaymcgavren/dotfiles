@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+# Copyright 2008 by David Koontz
+# Please send any corrections/enhancements to david (at) koontzfamily (dot) org.
+# Released under the MIT licence (http://www.opensource.org/licenses/mit-license.php)
+
+def show_startup_message
+  ip_address = nil
+  begin
+    require 'socket'
+    socket = UDPSocket.new
+    socket.connect("google.com", 80) # Doesn't actually connect, just resolves which interface to use based on routing table
+    ip_address = socket.addr
+  rescue Exception #bury exception, and use defualt message below
+  end
+
+  if ip_address.nil?
+    puts "You can connect to your server using the following URL: git://<your ip address>/"
+  else
+    puts "You can connect to your server using the following URL: git://#{ip_address[3]}/"
+  end
+end
+
+
+PROJECT_DIR = ARGV[0] || Dir.pwd
+dir = Dir.new(PROJECT_DIR)
+unless dir.entries.find {|e| e =~ /.git/}
+  puts <<-ENDL
+Usage: share_git_repo <repo name>
+By default, the repo name is the present working directory + .git
+You can specify an explicit directory name but remember to include the full path to the repo (the .git part)
+ENDL
+else
+  show_startup_message
+  `git daemon --reuseaddr --verbose --export-all --enable=receive-pack --base-path=#{dir.path}/.git`
+end
