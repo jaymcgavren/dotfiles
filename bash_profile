@@ -65,6 +65,9 @@ function toss {
         fi
     done
 }
+function my_ip {
+    ifconfig | grep 'broadcast' | awk '{print $6}'
+}
 
 #The command line prompt.
 case "$TERM" in

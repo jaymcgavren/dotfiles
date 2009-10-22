@@ -109,7 +109,7 @@ class String
 
   #Convert line separators within a string to spaces.
   def one_line
-    gsub(/\n\s*/, '')
+    gsub(/\n\s*/, ' ')
   end
   
   #Prepend a string on each line.
