@@ -9,6 +9,9 @@ fi
 #Path setup.
 export PATH=${HOME}/bin:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
+if [[ $OSTYPE == *darwin* ]]; then
+    export PATH=${HOME}/dotfiles/bin/osx:${PATH}
+fi
 export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
 export PATH=${HOME}/Shortcuts:${PATH}
