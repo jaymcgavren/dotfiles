@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby -w
 require 'utility'
 
 print Util.new.get_piped_data.run_erb

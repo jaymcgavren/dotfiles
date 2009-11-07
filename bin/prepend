@@ -1,3 +1,3 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby -w
 require 'utility'
 puts Util.new.get_piped_data.prepend(ARGV.join(' '))

@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby -w
 
 input = STDIN.isatty ? nil : STDIN.read
 if input

@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby -w
 require 'utility'
 
 file = File.open(File.join(ENV['HOME'], "events.txt"), "a")
