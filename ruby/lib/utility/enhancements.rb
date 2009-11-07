@@ -37,7 +37,7 @@ class Hash
   include DeferredExtensions
   
   #Format a hash into 'key: value' lines.
-  def to_s
+  def to_str
     strings = []
     self.each {|k, v| strings << "#{k}: #{v}"}
     strings.join("\n")
