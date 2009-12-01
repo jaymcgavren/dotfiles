@@ -8,7 +8,7 @@ uri = ARGV[0] || "druby://127.0.0.1:7632" #Port RNDA
 
 DRb.start_service
 space = Rinda::TupleSpaceProxy.new(DRbObject.new(nil, uri))
-space.read_all([/.*/, nil]).each do |tuple|
+space.read_all([nil, nil]).each do |tuple|
   key = tuple.shift
   puts "#{key}: #{tuple}"
 end

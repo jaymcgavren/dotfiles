@@ -10,4 +10,4 @@ uri = ARGV[2] || "druby://127.0.0.1:7632" #Port RNDA
 
 DRb.start_service 
 space = Rinda::TupleSpaceProxy.new(DRbObject.new(nil, uri))
-space.write([key, value])
+space.write([key.to_sym, value])
