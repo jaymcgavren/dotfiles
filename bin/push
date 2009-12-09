@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby -w
+require 'utility'
+
+util = Util.new
+storage = util.load(:storage) || {}
+if storage[ARGV.join(' ')]
+  storage[ARGV.join(' ')] << util.get_piped_data
+else
+  storage[ARGV.join(' ')] = util.get_piped_data
+end
+util.save(:storage, storage)

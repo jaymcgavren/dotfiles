@@ -10,6 +10,7 @@ ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
 IRB.conf[:SAVE_HISTORY] = 50000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+def history; puts Readline::HISTORY.entries.last(50).join("\n"); end
 
 Wirble.init
 Wirble.colorize

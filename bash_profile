@@ -41,18 +41,13 @@ export HISTFILESIZE=100000
 shopt -s histappend
 
 #Aliases.
-alias add='git add'
 alias alert='growlnotify -s'
 alias am='twtr up -m'
 alias clear='ruby -e "puts %Q{\n} * 80"'
-alias commit='git commit'
 alias jrake='jruby -S rake'
 alias l='ls -alF'
 alias player='/Applications/VLC.app/Contents/MacOS/VLC'
-alias pull='git pull'
-alias push='git push'
 alias serve_this_dir='python -m SimpleHTTPServer'
-alias status='git status'
 
 
 #Functions.
@@ -62,9 +57,9 @@ function gitrm {
 function toss {
     for filename; do
         if [ -e $HOME/.Trash/$filename ]; then
-            mv $* $HOME/.Trash/$filename$(date +%Y%m%d%H%M%S)
+            mv "${filename}" "${HOME}/.Trash/${filename}$(date +%Y%m%d%H%M%S)"
         else
-            mv $* $HOME/.Trash
+            mv "${filename}" "${HOME}/.Trash"
         fi
     done
 }
