@@ -14,6 +14,7 @@ if [[ $OSTYPE == *darwin* ]]; then
 fi
 export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
+export RUBYLIB=lib:${RUBYLIB}
 export PATH=${HOME}/Shortcuts:${PATH}
 
 #Command line editing options.
