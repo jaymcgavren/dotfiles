@@ -1,0 +1,45 @@
+h1. Jay's Dotfiles
+
+This is my collection of Unix/Linux shell scripts and configuration files.  I'm releasing them here in hopes of helping others, and in hopes of learning from others in turn.
+
+
+h1. Installation
+
+Most users will want to simply borrow the snippets they find interesting or useful.  But if you want to use the entire environment as is, you can do so by sourcing it from your own shell configuration...
+
+Drop the dotfiles folder in your home directory.  Then add lines like this to your ~/.bash_profile:
+
+<pre>
+  if [ -f ~/dotfiles/bash_profile ]; then
+      . ~/dotfiles/bash_profile
+  fi
+</pre>
+
+And in your ~/.bashrc:
+
+<pre>
+  if [ -f ~/dotfiles/bashrc ]; then
+      . ~/dotfiles/bashrc
+  fi
+</pre>
+
+The bash_profile and bashrc files should add all the scripts to your $PATH and do other environment setup.
+
+
+h1. Directories
+
+* /
+** "bash_profile" is equivalent to ~/.bash_profile, "irbrc" to "~/.irbrc", etc.  Include these files from the originals in your home directory.
+* bin/
+** Contains scripts suitable for use in the bash shell on any Unix-like system.
+* bin/osx/
+** These scripts are specific to Mac OS X.
+* ruby/lib/
+** Libraries suitable for referencing within irb or other scripts.  (They are not optimized for production use.)
+* ruby/spec/
+** Specs for the Ruby libraries.
+
+
+h1. Copyright
+
+Copyright (c) 2009-2010 Jay McGavren. Released under the MIT license. See the LICENSE file for details.
