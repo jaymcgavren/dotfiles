@@ -1,9 +1,12 @@
 #Get aliases and functions.
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+    . ~/.bashrc
 fi
 if [ -f ~/.profile ]; then
-	. ~/.profile
+    . ~/.profile
+fi
+if [ -f ~/dotfiles/host_specific/$HOSTNAME/bash_profile ]; then
+    . ~/dotfiles/host_specific/$HOSTNAME/bash_profile
 fi
 
 #Path setup.
@@ -28,7 +31,7 @@ set -o ignoreeof
 
 #Set up text editing/viewing.
 export CLICOLOR=1 #Colorizes output of ls and others.
-export EDITOR='/usr/bin/mate -w'
+export EDITOR=vi
 export VISUAL=$EDITOR
 export PAGER=less
 export LESS='-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
@@ -70,6 +73,7 @@ function my_ip {
 
 #The command line prompt.
 case "$TERM" in
+    xterm-color) color_prompt=yes;;
     xterm-256color) color_prompt=yes;;
 esac
 if [ "$color_prompt" = yes ]; then

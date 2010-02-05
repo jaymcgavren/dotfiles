@@ -1,6 +1,6 @@
 h1. Host-Specific Configuration
 
-To create a configuration specific to a particular box, create a subdirectory of this directory (host_specific) whose name matches $HOSTNAME on the target host.  During shell initialization, the following files under host_specific/$HOSTNAME/ will be included in the environment:
+To create a configuration specific to a particular box, create a subdirectory of this directory (host_specific) whose name matches $HOSTNAME on the target host.  During shell initialization, the following files under host_specific/$HOSTNAME/ will be included in the environment (if they exist):
 
 * profile
 * bash_profile
