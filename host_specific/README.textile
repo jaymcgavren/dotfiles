@@ -1,0 +1,11 @@
+h1. Host-Specific Configuration
+
+To create a configuration specific to a particular box, create a subdirectory of this directory (host_specific) whose name matches $HOSTNAME on the target host.  During shell initialization, the following files under host_specific/$HOSTNAME/ will be included in the environment:
+
+* profile
+* bash_profile
+* bashrc
+
+h1. Git-ignore
+
+Since these settings are not intended to be generally applicable (and may need to be kept private), this directory should be included in the .gitignore file for the dotfiles project.  git-add *will ignore* this directory by default.
