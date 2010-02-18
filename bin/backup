@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync --recursive $@ $BACKUP_PATH/$HOSTNAME/
+rsync --recursive --delete $@ $BACKUP_PATH/$HOSTNAME/
