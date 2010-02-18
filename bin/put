@@ -1,2 +1,2 @@
 #!/bin/bash
-scp -r $1 $2
+scp -r "$1" "$2"
