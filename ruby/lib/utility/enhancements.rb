@@ -92,7 +92,7 @@ class String
   #Treats string as XML and indents it.
   def indent_xml
     string = ''
-    to_xml_document.write(string, 0)
+    to_xml_document.write(string, 2)
     string
   end
   
