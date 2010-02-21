@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#Usage: configure_remote_system <login>@<address>
+remote=$1
+
+#TODO: Assumes $HOME is the working directory on remote.  Consider specifying $HOME instead of relying on working directory.
+
+#TODO: Will prompt for password twice.  Should I ask for password and pass to ssh on command line?  Will that show in local "ps"?
+ssh $remote "mkdir .ssh"
+#TODO: Should id_dsa.pub be copied instead?  Local authorized_keys?
+#TODO: Append newline at end of remote authorized_keys.
+cat $HOME/.ssh/id_rsa.pub | ssh $remote "cat >> .ssh/authorized_keys"
+ssh $remote "chmod go-rwx .ssh .ssh/*"
+scp -r $HOME/dotfiles $HOME/.bash_profile $HOME/.bashrc $HOME/.profile $remote:.
