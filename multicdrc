@@ -1,0 +1,181 @@
+# cd_size, maxfile_size, and first_disc altered by Jay McGavren, 2010-02-20.
+
+# Dan Born
+# dan@danborn.net
+
+# See http://danborn.net/multicd/ for documentation, information
+# about usage, and how to configure multicd on your system.
+
+# This is a sample configuration file for my multicd program.  Everything that
+# is configurable about my program is listed here.  You'll want to make sure
+# you change these to useful values for your system.
+
+# All file paths must be absolute.  No relative path names.
+# If a line contains a "#", everything after that is a comment.
+
+# Options in the global config file are overridden by options in a user's
+# config file, which can both be overridden by command line options.
+
+# Command line options have the same name as their name in here.  Boolean
+# options don't need a value on the command line.  For booleans, if the option
+# appears, true (or enabled) is assumed.
+# Examples:
+# multicd --files /home /etc /usr/local --exclude /home/httpd --only_one
+# multicd --files / --exclude /tmp /dev /proc --multi
+
+# NOTE: If you are a user of a previous version of multicd, it is important
+# to note that the use of image_dir is no longer supported.  Image file
+# locations are now specified by giving the full path to the name of the
+# image file by using image_file1 and image_file2.
+
+# Turns on multithreadedness.  This will cause the files for the next CD image
+# to be copied while the current one is still burning.  0 to disable this, 1
+# to enable it.
+multi = 0
+
+# If this is enabled, then multicd will run in a non-interactive mode.  It
+# will fit all of the files it can onto a single CD image, assume that a
+# disc is in the writer, burn the CD, and then quit.  1 to enable this, 0
+# to disable it.  You can assume that enabling this disables any
+# multithreading.
+only_one = 0
+
+# Tell multicd where to put and what to name the image file.  After a CD
+# has been burned from a given image file, a new file system is created on the
+# image file and it is reused for the next set of data.  This is much better
+# than deleting the old image file and creating a new one, because creating
+# image files usually takes a long time.
+# Required field.
+image_file1 = /var/tmp/multicd_image1
+
+# If multi is enabled, a second image file is required.
+image_file2 = /var/tmp/multicd_image2
+
+# The mount point for the image file while files are being copied to it.
+# Required field.
+image_mount = /var/tmp/multicd_image_mount
+
+# The size of the image file to create.  Can be specified in terms of
+# megabytes, kilobytes, or bytes.
+# Examples:
+# 4G          # Use a "G" for gigabytes.
+# 650M        # Use an "M" for megabytes.
+# 665600K     # Use a "K" for kilobytes.
+# 681574400   # Don't use any letter for bytes.
+# Required field.
+cd_size = 8G
+
+# Files larger than this will not be copied to the CD.  This value needs
+# to be smaller than cd_size, but exactly how much smaller depends on
+# the filesystem type used on the CD.  Rather than trying to guess this
+# myself, or put an arbitrary number in the code, I'm leaving it up to
+# the user.  620M/650M should be pretty safe, but maybe too
+# conservative.
+maxfile_size = 4G
+
+# Type of file system to create on the backup CDs.  This will probably
+# be expanded to include other filesystem types in the future.
+# Required field.
+fs_type = ext2
+
+# Extra options to give to mkfs.  The options shown here apply to
+# the default filesystem type of ext2 shown above.  -m 0 means
+# reserve 0 space for root, -q means quiet, and -F forces file
+# system creation on an image file.
+# If you wish to use multicd to burn DVDs, try:
+#   mkfs_opts = -m 0 -q -F -b 2048
+mkfs_opts = -m 0 -q -F
+
+# List of files to backup.
+# Example: files = /home /etc /usr/local "/home/joe smith"
+# Note: In the config file, you may use double quotes with the files and
+# exclude options for files that contain spaces.
+# Use a dash to indicate that a list of files, one per line, should be
+# read from stdin.
+files = /
+
+# Alternative to "files" option.  Specify a text file with files listed one
+# per line.
+# One of either files_list or files is required.
+#files_list = /tmp/myfiles.txt
+
+# This sets the type of compression to use, if any.  Each file in the
+# backup set will be compressed and renamed to end in either .gz,
+# .bz2, or .z, depending on the type of compression.  Set to 0 for no
+# compression, 1 for gzip, 2 for bzip2, and 3 for compress.
+compress = 0
+
+# Set the compression level.  The gzip program defaults to 6, bzip2
+# defaults to 9, and compress doesn't support levels.  See the man
+# pages for gzip and bzip2 for details.  Leave this option blank to
+# use the default.
+compress_level = 6
+
+# List of files to exclude from the list given for files above.
+exclude = /dev /lost+found /mnt /proc /tmp /usr/tmp /var/tmp
+
+# Alternative to "exclude" option.  Speciify a text file with files listed
+# one per line.
+#exclude_list = /tmp/excludes.txt
+
+# This is how cdrecord should be run.  multicd will append the name of
+# the image file to burn to the end.  Any output cdrecord produces is
+# sent to STDERR.
+# Required field.
+cdrecord = cdrecord -v blank=fast speed=4 dev=0,0,0 -data
+
+# You can use this to specify a command to run after each CD is done
+# burning.
+# The example shown simply opens the CD tray, but you could configure
+# it to run a command that plays a sound, or both ejects and plays a sound,
+# like this: cd_done = eject /dev/cdrom; cat cdsound.wav > /dev/dsp
+# cd_done = cdrecord dev=0,0,0 -eject
+cd_done = eject /dev/cdrom 
+
+# Yet another mode of operation.  If enabled, then multicd will create as
+# many image files as it needs to backup all of your files.  It won't burn
+# any CDs, just create a bunch of image files.  For the image file names it
+# will use the image_file1 value followed by the CD number.
+# 1 to enable, 0 to disable.
+noburn = 0
+
+# Another way to speed things along.  If this is enabled, then it is
+# assumed that the first disc for burning is already in the drive.  The
+# first CD will be burned automatically without prompting the user to put a
+# disc in, but all discs after the first will be prompted for.
+first_disc = 1
+
+# multicd normally starts out with blank CDs before it begins copying
+# files.  With this option enabled, multicd will save a copy of all the
+# files on the current CD, and add the new ones to it.  1 to enable, 0 to
+# disable.
+addfiles = 0
+
+# If specified, only backup files that have been modified since the
+# time specified.  Use d, h, m, and s to give units in days, hours,
+# minutes, and seconds.
+#since = 2d 4h 3m 18s
+
+# If addfiles is enabled, then the rewriteable CD will need to be mounted
+# and have files copied from it.  cd_dev and cd_mount are needed only when
+# addfiles is enabled.  cd_dev is the device file for you cd burner.
+cd_dev = /dev/scd0
+
+# cd_mount is needed when addfiles is enabled.  This is where the
+# rewriteable CD should be mounted in order to read files from it.
+cd_mount = /mnt/cdrom1
+
+# If this option is specified, an index file is created at the given
+# location.  Otherwise, no index file is created.
+# An index file is a simply a plain text file with a list of the files
+# on each CD.  This helps in determining which CD a file can be located on.
+# You can include %d to have the date and time be part of the file name.
+index_file = /var/tmp/multicd_index_%d
+
+# If check_config is set to 1, multicd will check to see if it has a valid
+# configuration, and then exit without doing anything.
+check_config = 0
+
+# This is here because people often expect to be able to give a --help option
+# on the command line.  If set, program prints a message and then exits.
+help = 0
