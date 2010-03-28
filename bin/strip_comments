@@ -1,2 +1,0 @@
-#!/usr/bin/env ruby -w
-STDIN.each{|line| print line unless line =~ /^\s*\#/}
