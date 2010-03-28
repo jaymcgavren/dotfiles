@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Splits a file into X-byte chunks.
 #Usage: split_into nnn[k|m] file
 split -b$1 "$2" "$2"

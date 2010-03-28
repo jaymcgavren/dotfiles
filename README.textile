@@ -42,4 +42,4 @@ h1. Directories
 
 h1. Copyright
 
-Copyright (c) 2009-2010 Jay McGavren. Released under the MIT license. See the LICENSE file for details.
+Unless otherwise noted, all files Copyright (c) 2009-2010 Jay McGavren, and are released under the MIT license. See the LICENSE file for details.

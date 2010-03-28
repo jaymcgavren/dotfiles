@@ -2,4 +2,5 @@
 require 'utility'
 
 util = Util.new
-print util.load(:storage)[ARGV.join(' ')]
+result = util.load(:storage)[ARGV.join(' ')] or fail "Could not load"
+print result

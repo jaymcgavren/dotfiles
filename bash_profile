@@ -73,6 +73,7 @@ function my_ip {
 
 #The command line prompt.
 case "$TERM" in
+    xterm) color_prompt=yes;;
     xterm-color) color_prompt=yes;;
     xterm-256color) color_prompt=yes;;
 esac

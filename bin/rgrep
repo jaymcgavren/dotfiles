@@ -1,2 +1,4 @@
-#!/bin/bash
-find "$2" -type f -exec grep --with-filename "$1" "{}" \;
+#!/bin/sh
+directory=$1
+shift
+find $directory -type f -exec grep --with-filename $@ "{}" \;
