@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'rbosa'
+
+options = OSA.app('Finder').finder_windows.first.list_view_options
+options.sort_column = options.columns.find{|c|c.name==OSA::Finder::ELSV::KIND_COLUMN}
