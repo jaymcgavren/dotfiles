@@ -1,2 +1,2 @@
 #!/bin/sh
-scp -r $@ ~/Downloads
+scp -r $@ $HOME/Downloads

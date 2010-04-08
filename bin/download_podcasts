@@ -1,2 +1,2 @@
 #!/bin/sh
-cat ~/audio.opml | podcatcher --dir ~/Downloads/podcasts --perfeed --strategy back_catalog --size 699 --memsize 10000 --order sequential
+cat $HOME/audio.opml | podcatcher --dir $HOME/Downloads/podcasts --perfeed --strategy back_catalog --size 699 --memsize 10000 --order sequential

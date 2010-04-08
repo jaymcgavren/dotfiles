@@ -1,2 +1,2 @@
 #!/bin/sh
-cat > ~/.old_diff
+cat > $HOME/.old_diff

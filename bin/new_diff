@@ -1,2 +1,2 @@
 #!/bin/sh
-diff ~/.old_diff -
+diff $HOME/.old_diff -
