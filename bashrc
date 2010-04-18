@@ -1,9 +1,5 @@
-if [ -f ~/dotfiles/host_specific/$HOSTNAME/bashrc ]; then
-    . ~/dotfiles/host_specific/$HOSTNAME/bashrc
+
+#Keep this last so it can override general settings!
+if [ -f $HOME/dotfiles_local/bashrc ]; then
+    . $HOME/dotfiles_local/bashrc
 fi
-
-export PATH=${PATH}:/usr/local/mysql/bin
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$PATH:/opt/jruby/bin
-
-export MANPATH=/opt/local/share/man:$MANPATH

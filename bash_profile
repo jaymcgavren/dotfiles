@@ -1,30 +1,19 @@
-#Get aliases and functions.
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
-if [ -f ~/.profile ]; then
-    . ~/.profile
-fi
-if [ -f ~/dotfiles/host_specific/$HOSTNAME/bash_profile ]; then
-    . ~/dotfiles/host_specific/$HOSTNAME/bash_profile
+if [ -f $HOME/.profile ]; then
+    . $HOME/.profile
 fi
 
-#Path setup.
-export PATH=${HOME}/bin:${PATH}
-export PATH=${HOME}/dotfiles/bin:${PATH}
-if [[ $OSTYPE == *darwin* ]]; then
-    export PATH=${HOME}/dotfiles/bin/osx:${PATH}
+if [ -f $HOME/.bashrc ]; then
+    . $HOME/.bashrc
 fi
-export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
-export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
-export RUBYLIB=lib:${RUBYLIB}
-export PATH=${HOME}/Shortcuts:${PATH}
+
+if [ -f /opt/local/etc/bash_completion ]; then
+   . /opt/local/etc/bash_completion
+fi
+
+export MANPATH=/opt/local/share/man:$MANPATH
 
 #Command line editing options.
 set -o emacs
-
-#Create files as read-only by group, untouchable by world.
-umask 027
 
 #Only "exit" or "logout" will log off the system.
 set -o ignoreeof
@@ -81,6 +70,11 @@ if [ "$color_prompt" = yes ]; then
     export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 else
     export PS1='\u@\h:\w\n\$ '
+fi
+
+#Keep this last so it can override general settings!
+if [ -f $HOME/dotfiles_local/bash_profile ]; then
+    . $HOME/dotfiles_local/bash_profile
 fi
 
 #Set starting directory.
