@@ -1,0 +1,5 @@
+#!/bin/sh
+#Usage: burn <directory>
+#Make an ISO for the specified directory, then instead of writing to a file, pipe direct to CD recorder.
+#Add --eject to cdrecord args if you want disk to eject when work is complete.
+mkisofs -r -R -J -l -L $* | cdrecord dev=3,1,0 -v speed=4 -

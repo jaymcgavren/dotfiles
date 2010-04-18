@@ -1,0 +1,2 @@
+#!/bin/bash
+open "http://www3.tivo.com/tivo-tco/search.do?searchFor=$(echo $@ | sed 's/\ /+/g')&dispatch=simplesearch&searchCategory=&x=0&y=0"

@@ -1,0 +1,2 @@
+#!/bin/sh
+/Applications/VLC.app/Contents/MacOS/VLC "$HOME/Downloads/audio"

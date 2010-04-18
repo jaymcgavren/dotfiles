@@ -1,0 +1,2 @@
+#!/bin/sh
+find ~/Downloads/podcasts -type f -iname "*.mp3" -exec rm "{}" \;

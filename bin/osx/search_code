@@ -1,0 +1,2 @@
+#!/bin/bash
+open http://www.google.com/codesearch?as_q=$(echo $@ | sed 's/\ /+/g')&num=100

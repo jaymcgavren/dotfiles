@@ -1,0 +1,2 @@
+#!/bin/bash
+open http://www.gamefly.com/products/search.asp?pf=&k=$(echo $@ | sed 's/\ /+/g')&sub=1&sb=mostpop&spsrch.x=0&spsrch.y=0

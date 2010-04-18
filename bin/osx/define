@@ -1,0 +1,2 @@
+#!/bin/bash
+open http://dictionary.reference.com/search?q=$(echo $@ | sed 's/\ /+/g')

@@ -1,0 +1,3 @@
+#!/bin/sh
+chmod ug+x ~/bin/*
+chmod ug+x ~/dotfiles/bin/*

@@ -1,0 +1,2 @@
+#!/bin/bash
+open "http://www.netflix.com/Search?v1=$(echo $@ | sed 's/\ /+/g')"

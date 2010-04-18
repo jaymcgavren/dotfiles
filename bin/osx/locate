@@ -1,0 +1,2 @@
+#!/bin/bash
+open "http://local.google.com/local?q=$(echo $@ | sed 's/\ /+/g')"
