@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>Jay's audio subscriptions</title>
+    </head>
+    <body>
+        <outline title="audio" text="audio">
+            <outline
+                text="MediaBytes with Shelly Palmer - New Media News - Audio"
+                title="MediaBytes with Shelly Palmer - New Media News - Audio"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/Media30WithShellyPalmer" htmlUrl="http://www.shellypalmermedia.com"/>
+            <outline text="TechCrunch Headlines"
+                title="TechCrunch Headlines" type="rss"
+                xmlUrl="http://www.switchpod.com/users/techcrunchheadlines/feed.xml" htmlUrl="http://www.stitcher.com"/>
+            <outline text="CNET News Daily Podcast"
+                title="CNET News Daily Podcast" type="rss"
+                xmlUrl="http://newsdailypodcast.cnet.com/" htmlUrl="http://news.cnet.com/8300-11424_3-90.html"/>
+            <outline text="WNYC's Radio Lab" title="WNYC's Radio Lab"
+                type="rss" xmlUrl="http://feeds.wnyc.org/radiolab" htmlUrl="http://pipes.yahoo.com/pipes/pipe.info?_id=d71dbccf7f09a3d9e519fb4c1864ce91"/>
+            <outline text="Slashdot Review - SDR News"
+                title="Slashdot Review - SDR News" type="rss"
+                xmlUrl="http://slashdotreview.com/wp-rss2.php" htmlUrl="http://slashdotreview.com"/>
+            <outline
+                text="Jupiter Broadcasting » Linux Action Show - MP3"
+                title="Jupiter Broadcasting » Linux Action Show - MP3"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/TheLinuxActionShow" htmlUrl="http://www.jupiterbroadcasting.com"/>
+            <outline
+                text="Last.fm free recommended downloads for nephariuz's"
+                title="Last.fm free recommended downloads for nephariuz's"
+                type="rss"
+                xmlUrl="http://ws.audioscrobbler.com/2.0/user/nephariuz/podcast.rss" htmlUrl="http://www.last.fm/user/nephariuz"/>
+            <outline text="Rails Envy Podcast"
+                title="Rails Envy Podcast" type="rss"
+                xmlUrl="http://feeds.feedburner.com/railsenvy-podcast" htmlUrl="http://railsenvy.com/category/podcast"/>
+            <outline text="The Real Deal" title="The Real Deal"
+                type="rss"
+                xmlUrl="http://feeds2.feedburner.com/cnet/realdeal" htmlUrl="http://www.cnet.com/8300-17920_1-84.html"/>
+            <outline text="Ruby on Rails Podcast"
+                title="Ruby on Rails Podcast" type="rss"
+                xmlUrl="http://podcast.rubyonrails.org/podcast.xml" htmlUrl="http://podcast.rubyonrails.org"/>
+            <outline text="Rubyology" title="Rubyology" type="rss"
+                xmlUrl="http://feeds.feedburner.com/rubyology" htmlUrl="http://www.rubyology.com/"/>
+            <outline text="Smart Video Game Fan"
+                title="Smart Video Game Fan" type="rss"
+                xmlUrl="http://smartvideogamefan.podbean.com/feed/" htmlUrl="http://smartvideogamefan.podbean.com"/>
+            <outline
+                text="Yahoo! Tech Advisors: Gina Hughes - Podcasts powered by Odiogo"
+                title="Yahoo! Tech Advisors: Gina Hughes - Podcasts powered by Odiogo"
+                type="rss"
+                xmlUrl="http://podcasts.odiogo.com/gina-hughes/podcasts-xml.php" htmlUrl="http://tech.yahoo.com/blogs/hughes"/>
+            <outline text="IT Conversations" title="IT Conversations"
+                type="rss"
+                xmlUrl="http://www.itconversations.com/rss/recentWithEnclosures.php" htmlUrl="http://itc.conversationsnetwork.org"/>
+            <outline text="1UP Yours" title="1UP Yours" type="rss"
+                xmlUrl="http://www.1up.com/flat/Podcasts/podcasts.xml" htmlUrl="http://listenup.1up.com"/>
+            <outline text="NBC Nightly News (audio)"
+                title="NBC Nightly News (audio)" type="rss"
+                xmlUrl="http://podcast.msnbc.com/audio/podcast/MSNBC-Nightly.xml" htmlUrl="http://www.nightly.msnbc.com"/>
+            <outline text="The Totally Rad Show"
+                title="The Totally Rad Show" type="rss"
+                xmlUrl="http://revision3.com/trs/feed/mp3" htmlUrl="http://revision3.com/trs"/>
+            <outline text="Diggnation (Mp3)" title="Diggnation (Mp3)"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/diggnation" htmlUrl="http://revision3.com/diggnation"/>
+            <outline text="The Ruby Show" title="The Ruby Show" type="rss"
+                xmlUrl="http://feeds.feedburner.com/rubyshow" htmlUrl="http://5by5.tv/rubyshow"/>
+            <outline text="Ruby5" title="Ruby5" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Ruby5" htmlUrl="http://ruby5.envylabs.com/"/>
+            <outline text="morning radio" title="morning radio"
+                type="rss"
+                xmlUrl="http://radio.morningproject.com/?feed=rss2" htmlUrl="http://radio.morningproject.com"/>
+        </outline>
+    </body>
+</opml>
