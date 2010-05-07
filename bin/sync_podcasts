@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ ${#PODCAST_DESTINATION_PATH} -eq 0 ]; then
+  echo "Please set PODCAST_DESTINATION_PATH environment variable and re-run."
+  exit 65
+fi
+rsync --recursive --delete $HOME/Downloads/podcasts $PODCAST_DESTINATION_PATH
