@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=/usr/bin:/bin:/usr/local/bin
+
+10 04 * * 1,2,3,4,5 rsync --compress --recursive --times --perms --links /Users/jay/Music/iTunes/iTunes\ Music/ jay@media:/media/Backup/media/
+
+10 16 * * 1,2,3,4,5 rsync --compress --recursive --times --perms --links --delete /Users/jay/Projects/workspace/ jmcgaver@jmcgavren:/cygdrive/c/Backup/workspace/
+
+55 16 * * 1,2,3,4,5 growlnotify "Time to go home."
