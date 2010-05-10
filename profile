@@ -1,4 +1,5 @@
 #Path setup.
+export PATH=/usr/local/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=${PATH}:/usr/local/mysql/bin
 export PATH=$PATH:/opt/jruby/bin
