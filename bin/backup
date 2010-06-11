@@ -1,2 +1,12 @@
 #!/bin/sh
-rsync --recursive --delete $@ $BACKUP_PATH/$HOSTNAME/
+if [ ${#BACKUP_LOCATION} -eq 0 ]; then
+  echo "Please set BACKUP_LOCATION environment variable and re-run."
+  exit 65
+fi
+if [ ${#HOSTNAME} -eq 0 ]; then
+  echo "Please set HOSTNAME environment variable and re-run."
+  exit 65
+fi
+for filename; do
+  rsync --compress --recursive --times --perms --links --delete $filename $BACKUP_LOCATION/$HOSTNAME/
+done
