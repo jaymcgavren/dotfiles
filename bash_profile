@@ -59,6 +59,9 @@ function toss {
 function my_ip {
     ifconfig | grep 'broadcast' | awk '{print $6}'
 }
+function variables() {
+  comm -23 <(declare) <(declare -f) ;
+}
 
 #The command line prompt.
 case "$TERM" in
