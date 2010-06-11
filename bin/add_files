@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync --compress --recursive --times --perms --links "$1" "$2"
