@@ -1,3 +1,7 @@
+if ENV['RAILS_ENV']
+  load File.join(File.dirname(__FILE__), '.railsrc')
+end
+
 %w{rubygems wirble hirb irb/completion irb/ext/save-history}.each do |lib|
   begin
     require lib
@@ -8,8 +12,33 @@ end
 
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
+
+# Some default enhancements/settings for IRB, based on
+# http://wiki.rubygarden.org/Ruby/page/show/Irb/TipsAndTricks
+
+# Setup permanent history.
 IRB.conf[:SAVE_HISTORY] = 50000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+HISTFILE = IRB.conf[:HISTORY_FILE]
+MAXHISTSIZE = IRB.conf[:SAVE_HISTORY]
+begin
+  histfile = File::expand_path(HISTFILE)
+  if File::exists?(histfile)
+    lines = IO::readlines(histfile).collect { |line| line.chomp }
+    puts "Read #{lines.nitems} saved history commands from '#{histfile}'." if $VERBOSE
+    Readline::HISTORY.push(*lines)
+  else
+    puts "History file '#{histfile}' was empty or non-existant." if $VERBOSE
+  end
+  Kernel::at_exit do
+    lines = Readline::HISTORY.to_a.reverse.uniq.reverse
+    lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.nitems > MAXHISTSIZE
+    puts "Saving #{lines.length} history lines to '#{histfile}'." if $VERBOSE
+    File::open(histfile, File::WRONLY|File::CREAT|File::TRUNC) { |io| io.puts lines.join("\n") }
+  end
+rescue => e
+  puts "Error when configuring permanent history: #{e}" if $VERBOSE
+end
 
 def history; puts Readline::HISTORY.entries.last(50).join("\n"); end
 
