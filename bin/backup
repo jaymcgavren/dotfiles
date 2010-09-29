@@ -8,5 +8,5 @@ if [ ${#HOSTNAME} -eq 0 ]; then
   exit 65
 fi
 for filename; do
-  rsync --compress --recursive --times --perms --links --delete $filename $BACKUP_LOCATION/$HOSTNAME/
+  rsync --compress --recursive --checksum --times --perms --links --delete $filename $BACKUP_LOCATION/$HOSTNAME/
 done
