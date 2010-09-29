@@ -1,2 +1,2 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 puts STDIN.map{|l| l.chomp}.join(' ')

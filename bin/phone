@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 require 'utility'
 
@@ -6,6 +6,6 @@ util = Util.new
 Utility::Email::Email.new(
   :senders => [util.load(:phone_email)],
   :recipients => [util.load(:phone_email)],
-  :subject => "Reminder: #{ARGV.join(' ')}",
+  :subject => ARGV.join(' '),
   :body => util.get_piped_data
 ).send

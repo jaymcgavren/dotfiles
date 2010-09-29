@@ -1,3 +1,3 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
 STDIN.each{|l| puts l.upcase}

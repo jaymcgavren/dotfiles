@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'utility'
+
+utility = Util.new
+
+java_code = utility.get_piped_data
+
+class_name = /class\s+(\w+)/.match(java_code).captures.first
+
+require 'tempfile'
+
+#Tempfile writes an extension onto file name; we need it not to.
+class Tempfile
+  def make_tmpname(basename, n)
+    basename
+  end
+end
+
+
+code_file = Tempfile.new("#{class_name}.java")
+puts code_file.path
+class_file_name = File.join(File.dirname(code_file.path), "#{class_name}.class")
+puts class_file_name
+code_file.print(java_code)
+code_file.close
+utility.run('javac', code_file.path)
+# code_file.unlink
+utility.run('java', class_file_name)
+# File.delete(class_file_name)
