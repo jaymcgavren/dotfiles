@@ -4,7 +4,7 @@ require 'rubygems'
 #Delays loading ActiveSupport/Extlib methods until they are called.
 module DeferredExtensions
   def method_missing(method, *arguments, &block)
-    require 'activesupport'
+    require 'active_support'
     require 'extlib'
     if self.respond_to?(method)
       self.send(method, *arguments, &block)
@@ -141,11 +141,10 @@ class String
     [parse_config(delimiter), body]
   end
   
-  #Evaluates as erb string, returning result.
-  #If a hash is passed in, it will be available within the erb as "arg".
-  def run_erb(arg = {})
+  #Evaluates in in_binding as erb string, returning result.
+  def run_erb(in_binding = binding)
     require 'erb'
-    ERB.new(self.to_s, nil, '>').result(binding)
+    ERB.new(self.to_s, nil, '>').result(in_binding)
   end
   
   #Uses Windows Speech API to speak string.
