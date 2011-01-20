@@ -6,8 +6,8 @@ if [ -f $HOME/.bashrc ]; then
     . $HOME/.bashrc
 fi
 
-if [ -f /opt/local/etc/bash_completion ]; then
-   . /opt/local/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
 fi
 
 export MANPATH=/opt/local/share/man:$MANPATH
@@ -19,6 +19,7 @@ set -o emacs
 set -o ignoreeof
 
 #Set up text editing/viewing.
+export LANG=en_US.utf-8
 export CLICOLOR=1 #Colorizes output of ls and others.
 export EDITOR=vi
 export VISUAL=$EDITOR

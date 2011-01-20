@@ -1,29 +1,13 @@
-_git_completion() 
-{
-  local current_word options
-  COMPREPLY=()
-  current_word="${COMP_WORDS[COMP_CWORD]}"
-  options="add branch checkout clone commit diff fetch grep init log merge mv pull push rebase reset rm status tag"
-
-  if [[ ${current_word} == -* ]] ; then
-    COMPREPLY=( $(compgen -W "${options}" -- ${current_word}) )
-    return 0
-  fi
-}
+# _git_completion() 
+# {
+#   local current_word options
+#   COMPREPLY=()
+#   current_word="${COMP_WORDS[COMP_CWORD]}"
+#   options="add branch checkout clone commit diff fetch grep init log merge mv pull push rebase reset rm status tag"
+# 
+#   if [[ ${current_word} == -* ]] ; then
+#     COMPREPLY=( $(compgen -W "${options}" -- ${current_word}) )
+#     return 0
+#   fi
+# }
 # complete -F _git_completion git
-
-_foo() 
-{
-    local cur prev opts
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts="--help --verbose --version"
-
-    if [[ ${cur} == -* ]] ; then
-        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
-        return 0
-    fi
-}
-# complete -F _foo foo
-

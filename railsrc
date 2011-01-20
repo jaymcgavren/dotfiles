@@ -1,4 +1,5 @@
-%w{rubygems factories/factories activerecord}.each do |lib|
+TODO restore!
+%w{rubygems active_record}.each do |lib|
   begin
     require lib
   rescue LoadError => err
@@ -6,5 +7,5 @@
   end
 end
 
-#Output SQL queries, etc. to terminal.  (Via Ryan Bates)
+Output SQL queries, etc. to terminal.  (Via Ryan Bates)
 ActiveRecord::Base.logger = Logger.new(STDOUT)

@@ -1,18 +1,24 @@
 #Path setup.
 export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=${PATH}:/usr/local/mysql/bin
 export PATH=$PATH:/opt/jruby/bin
-export PATH=${HOME}/bin:${PATH}
+export PATH=${HOME}/dotfiles_local/bin:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
 export PATH=${HOME}/Shortcuts:${PATH}
 if [[ $OSTYPE == *darwin* ]]; then
     export PATH=${HOME}/dotfiles/bin/osx:${PATH}
+    export PATH=$PATH:${HOME}/Applications/android-sdk-mac_86/tools/
 fi
 
 export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
 export RUBYLIB=lib:${RUBYLIB}
+
+export GLASSFISH_HOME=${HOME}/Applications/glassfishv3
+export IVY_HOME=${HOME}/ivy-cache
+export ANT_HOME=${HOME}/Applications/ant
 
 #Create files as read-only by group, untouchable by world.
 umask 027
