@@ -1,9 +1,0 @@
-SHELL=/bin/bash
-PATH=$HOME/dotfiles_local/bin:$HOME/dotfiles/bin:/usr/bin:/bin:/usr/local/bin
-
-10 04 * * 1,2,3,4,5 add_files "/Users/jay/Music/iTunes/iTunes Music/" "jay@media:/media/Backup/media/"
-10 03 * * 1,2,3,4,5 add_files "/Users/jay/Documents/content/" "jay@media:/media/Backup/content/"
-
-10 02 * * * backup "$HOME/Projects/" "$HOME/Documents/"
-
-55 16 * * 1,2,3,4,5 growlnotify "Time to go home."

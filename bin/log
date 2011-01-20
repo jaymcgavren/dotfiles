@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+require 'utility/logging'
+require 'utility/main'
+
+class Tool
+  include Utility::Logging
+  include Utility::Main
+end
+
+tool = Tool.new
+piped_data = tool.get_piped_data
+if piped_data
+  tool.log.info "#{ARGV.join(' ')}\n#{piped_data}"
+else
+  tool.log.info "#{ARGV.join(' ')}"
+end
