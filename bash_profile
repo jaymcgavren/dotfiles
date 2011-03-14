@@ -33,6 +33,7 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 #Make shells write to history immediately instead of on exit.
 shopt -s histappend
+PROMPT_COMMAND='history -a'
 
 #Aliases.
 alias alert='growlnotify -s'
