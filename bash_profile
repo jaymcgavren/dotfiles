@@ -6,8 +6,8 @@ if [ -f $HOME/.bashrc ]; then
     . $HOME/.bashrc
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
 fi
 
 export MANPATH=/opt/local/share/man:$MANPATH
@@ -39,9 +39,11 @@ PROMPT_COMMAND='history -a'
 alias alert='growlnotify -s'
 alias am='twtr up -m'
 alias clear='ruby -e "puts %Q{\n} * 80"'
+alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 alias jrake='jruby -S rake'
 alias l='ls -alF'
 alias player='/Applications/VLC.app/Contents/MacOS/VLC'
+alias please=sudo
 alias serve_this_dir='python -m SimpleHTTPServer'
 
 
