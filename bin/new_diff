@@ -1,2 +1,8 @@
-#!/bin/sh
-diff $HOME/.old_diff -
+#!/bin/bash
+hash opendiff &> /dev/null
+if [ $? -eq 1 ]; then
+  diff -b $HOME/.old_diff -
+else
+  cat > $HOME/.new_diff && opendiff $HOME/.old_diff $HOME/.new_diff
+  rm $HOME/.new_diff
+fi
