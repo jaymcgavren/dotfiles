@@ -1,0 +1,3 @@
+#!/bin/sh
+: ${1?"Usage: $0 ARGUMENT"}
+curl --header "Content-Type: text/xml" --data @- "$1"
