@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
 
-require 'utility/all'
+require 'utility'
 
 print Util.new.get_piped_data.interpolate
