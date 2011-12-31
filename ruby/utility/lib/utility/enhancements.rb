@@ -1,6 +1,3 @@
-require 'rubygems'
-
-
 #Delays loading ActiveSupport/Extlib methods until they are called.
 module DeferredExtensions
   def method_missing(method, *arguments, &block)
@@ -76,7 +73,7 @@ class String
   
   #Append a string to each line.
   def append(string)
-    map{|line| line.chomp + string}.join("\n")
+    split("\n").map{|line| line.chomp + string}.join("\n")
   end
   
   def decode_64

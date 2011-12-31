@@ -1,0 +1,13 @@
+source "http://rubygems.org"
+
+gemspec
+
+gem 'activesupport', "~>3.0.0"
+gem 'extlib', "~>0.9.0"
+
+group :development, :test do
+  gem 'rspec', "~>2.5.0"
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'growl' if RUBY_PLATFORM =~ /darwin/i
+end
