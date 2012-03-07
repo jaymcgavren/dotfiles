@@ -1,0 +1,13 @@
+#!/bin/sh
+#Like the "backup" command, but keeps remote files even if they have been deleted locally.
+if [ ${#ARCHIVE_LOCATION} -eq 0 ]; then
+  echo "Please set ARCHIVE_LOCATION environment variable and re-run."
+  exit 65
+fi
+if [ ${#HOSTNAME} -eq 0 ]; then
+  echo "Please set HOSTNAME environment variable and re-run."
+  exit 65
+fi
+for filename; do
+  rsync --verbose --compress --recursive --checksum --times --perms --links "$filename" "$ARCHIVE_LOCATION/$HOSTNAME/$filename/"
+done
