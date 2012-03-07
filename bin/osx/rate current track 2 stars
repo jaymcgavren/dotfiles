@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+osascript ~/dotfiles/bin/osx/rate_current_track.scpt 40
