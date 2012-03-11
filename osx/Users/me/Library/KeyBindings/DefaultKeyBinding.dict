@@ -1,0 +1,4 @@
+{
+    "~f"	= "moveWordForward:";  /* M-f */
+    "~b"	= "moveWordBackward:"; /* M-b */
+}
