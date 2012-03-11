@@ -33,16 +33,14 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 #Make shells write to history immediately instead of on exit.
 shopt -s histappend
-PROMPT_COMMAND='history -a'
+export PROMPT_COMMAND='history -a'
 
 #Aliases.
 alias alert='growlnotify -s'
-alias am='twtr up -m'
 alias clear='ruby -e "puts %Q{\n} * 80"'
 alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 alias jrake='jruby -S rake'
 alias l='ls -alF'
-alias player='/Applications/VLC.app/Contents/MacOS/VLC'
 alias please=sudo
 alias serve_this_dir='python -m SimpleHTTPServer'
 
