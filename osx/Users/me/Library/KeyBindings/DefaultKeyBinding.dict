@@ -1,4 +1,27 @@
 {
-    "~f"	= "moveWordForward:";  /* M-f */
-    "~b"	= "moveWordBackward:"; /* M-b */
+    
+    "^v" = "pageUp:";
+    "~v" = "pageDown:";
+    /* "^l" = "centerSelectionInVisibleArea:" */ /* Implicit by default */
+    "~f" = "moveWordForward:";  /* M-f */
+    "~b" = "moveWordBackward:"; /* M-b */
+    "~{" = "moveToBeginningOfParagraph:";
+    "~}" = "moveToEndOfParagraph:";
+    "~<" = "moveToBeginningOfDocument:"; /* M-< */
+    "~>" = "moveToEndOfDocument:"; /* M-> */
+    /* "^n" = "moveDown" */ /* Implicit by default */
+    /* "^d" = "deleteForward"; */ /* Implicit by default */
+    "~d" = "deleteWordForward:";
+    "~\010" = "deleteWordBackward:"; /* Alt-backspace */
+    "~\177" = "deleteWordBackward:"; /* Alt-delete */ 
+    
+    /* Mark/Point */
+    "^ " = "setMark:"; /* C-space */
+    "^w" = "deleteToMark:"; /* C-w */
+    "^y" = "yank:"; /* C-y */
+    "~y" = "yankAndSelect:"; /* M-y */ /*Doesn't seem to work!*/
+    
+    /* Complete */
+    "\033" = "complete:"; /* Escape */
+    
 }
