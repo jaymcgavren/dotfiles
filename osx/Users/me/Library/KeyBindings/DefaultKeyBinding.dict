@@ -21,7 +21,4 @@
     "^y" = "yank:"; /* C-y */
     "~y" = "yankAndSelect:"; /* M-y */ /*Doesn't seem to work!*/
     
-    /* Complete */
-    "\033" = "complete:"; /* Escape */
-    
 }
