@@ -19,13 +19,6 @@ export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
 export RUBYLIB=lib:${RUBYLIB}
 
-export GLASSFISH_HOME=${HOME}/Applications/glassfishv3
-export IVY_HOME=${HOME}/ivy-cache
-export ANT_HOME=${HOME}/Applications/ant
-export M2_HOME=${HOME}/Applications/apache-maven-2.2.1
-export M2=$M2_HOME/bin
-export PATH=${M2}:${PATH}
-
 #Create files as read-only by group, untouchable by world.
 umask 027
 
