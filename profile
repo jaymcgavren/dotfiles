@@ -10,8 +10,10 @@ export PATH=${HOME}/dotfiles/bin:${PATH}
 export PATH=$PATH:${HOME}/Applications/android-sdk/tools/
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
+  export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
 elif [[ $OSTYPE == *linux* ]]; then
   export PATH=${HOME}/dotfiles/bin/linux:${PATH}
+  export PATH=${HOME}/dotfiles_local/bin/linux:${PATH}
 fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
 
