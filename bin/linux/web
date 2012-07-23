@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+google-chrome 2>>$HOME/stderr.log &
