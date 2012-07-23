@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+open '/Applications/Safari.app'
