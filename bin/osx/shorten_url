@@ -1,0 +1,2 @@
+#!/bin/bash
+open http://bit.ly/?u=$(echo $@ | sed 's/\ /+/g')

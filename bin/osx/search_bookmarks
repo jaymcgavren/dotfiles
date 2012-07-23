@@ -1,0 +1,2 @@
+#!/bin/bash
+open https://www.google.com/bookmarks/find?q=$(echo $@ | sed 's/\ /+/g')

@@ -1,0 +1,2 @@
+#!/bin/bash
+open http://maps.google.com/maps?q=$(echo $@ | sed 's/\ /+/g')
