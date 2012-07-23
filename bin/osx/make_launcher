@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+usage = "make_app_launcher app_path1 [app_path2 ...]"
+usage += "outputs shell scripts to current directory"
+paths = ARGV
+fail usage if paths.empty?
+
+paths.each do |path|
+
+  full_path = File.expand_path(path)
+
+  launcher_name = File.basename(full_path, ".*")
+  launcher_name.gsub!(/\s+/, '_')
+  launcher_name.downcase!
+  
+  if ! File.exist?(launcher_name)
+    File.open(launcher_name, 'a') do |file|
+      file.puts "#!/usr/bin/env sh"
+      escaped_path = full_path.gsub(/'/, %q{\\'})
+      file.puts "open '#{escaped_path}'"
+    end
+    File.chmod(0750, launcher_name)
+  else
+    warn "#{launcher_name} script exists, skipping"
+  end
+  
+end
