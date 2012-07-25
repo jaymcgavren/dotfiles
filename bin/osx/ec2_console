@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+open https://console.aws.amazon.com/ec2/home?region=us-west-1

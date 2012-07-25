@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+open http://live.xbox.com/en-US/profile/Friends.aspx
