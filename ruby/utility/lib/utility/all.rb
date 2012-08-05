@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'utility/main'
 require 'utility/email'
 require 'utility/enhancements'

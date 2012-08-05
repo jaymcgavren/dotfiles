@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility'
+require 'utility/storage'
 
-util = Util.new
-print util.load(:storage).keys.sort.join("\n")
+storage = Object.new
+storage.extend Utility::Storage
+print storage.load(:storage).keys.sort.join("\n")

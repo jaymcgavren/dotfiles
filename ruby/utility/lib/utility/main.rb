@@ -1,5 +1,3 @@
-require 'rubygems'
-
 require 'utility/logging'
 require 'utility/storage'
 

@@ -1,12 +1,16 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility'
+require 'utility/main'
 
-util = Util.new
-storage = util.load(:storage) || {}
-if storage[ARGV.join(' ')]
-  storage[ARGV.join(' ')] << util.get_piped_data
+key = ARGV.join(' ')
+
+utility = Object.new
+utility.extend Utility::Main
+
+storage = utility.load(:storage) || {}
+if storage[key]
+  storage[key] << utility.get_piped_data
 else
-  storage[ARGV.join(' ')] = util.get_piped_data
+  storage[key] = utility.get_piped_data
 end
-util.save(:storage, storage)
+utility.save(:storage, storage)
