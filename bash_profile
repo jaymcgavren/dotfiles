@@ -87,7 +87,5 @@ fi
 #Set starting directory.
 cd ~/Projects
 
-
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
+#Set up fasd.
+eval "$(fasd --init auto)"
