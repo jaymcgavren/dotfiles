@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
-usage = "make_app_launcher app_path1 [app_path2 ...]"
-usage += "outputs shell scripts to current directory"
+usage = <<-EOD
+make_launcher path1 [path2 ...]
+outputs shell scripts to current directory
+EOD
 paths = ARGV
-fail usage if paths.empty?
+puts usage and fail if paths.empty?
 
 paths.each do |path|
 
