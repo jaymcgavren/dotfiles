@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+gem 'guard'
+gem 'guard-shell'
+
+require 'guard'
+
+guardfile_contents = <<-EOD
+  guard :shell, :all_on_start => true do
+    ARGV.each do |pattern|
+      watch(pattern) do |m|
+        system "open \#{m[0]}"
+      end
+    end
+  end
+EOD
+
+Guard.start(:guardfile_contents => guardfile_contents)
