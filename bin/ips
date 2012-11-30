@@ -1,0 +1,151 @@
+#!/usr/bin/env ruby
+# -*- encoding: US-ASCII -*-
+
+# ruby-ips.rb --Kernigh, March 2009
+# This program is in the public domain and has no copyright.
+
+require 'optparse'
+
+filename = nil
+sflag = false
+
+opts = OptionParser.new do |opts|
+  opts.banner = "usage: #{$0} [-s] [-f file] patch..."
+
+  opts.on("-f FILE", "Apply patches to FILE") do |f|
+    filename = f
+  end
+
+  opts.on("-s", "Work silently") do |l|
+    sflag = true
+  end
+end
+
+opts.parse!
+
+# usage message if no arguments
+if ARGV.size == 0
+  puts opts
+  exit 0
+end
+
+if sflag && (not filename)
+  $stderr.puts "#{$0}: nothing to do"
+  exit 1
+end
+
+# compatibility with Ruby before 1.8.7
+unless 3.respond_to? :ord
+  # with Ruby 1.8, "x"[0] is Fixnum
+  # with Ruby 1.9, "x"[0] is String, "x"[0].ord is Fixnum
+  class Integer
+    def ord
+      self
+    end
+  end
+end
+
+# subroutines
+def unpack2(bytes)
+  (bytes[0].ord << 8) + bytes[1].ord
+end
+def unpack3(bytes)
+  (bytes[0].ord << 16) + (bytes[1].ord << 8) + bytes[2].ord
+end
+def hex(num)
+  "0x#{num.to_s(16)} (#{num})"
+end
+
+# start work
+file = open(filename, File::RDWR) if filename
+
+ARGV.each do |patchname|
+
+  # provide pinfo, pwarn for this patch
+  pinfo = if sflag
+    lambda { |m| }
+  else
+    $stdout.puts "#{patchname}:"
+    lambda { |m| $stdout.puts "  #{m}" }
+  end
+  pwarn = lambda { |m| $stderr.puts "#{patchname}: #{m}" }
+
+  # open patch
+  patch = open(patchname, File::RDONLY)
+
+  # check magic bytes
+  unless patch.read(5) == "PATCH"
+    pwarn.call "bad magic bytes, not an IPS patch"
+    exit 1
+  end
+
+  # lambda to read patch and check number of bytes
+  pread = lambda do |count|
+    bytes = patch.read(count)
+    if bytes.length < count
+      pwarn.call "read #{bytes.length} bytes from patch, " +
+          "expected #{count} bytes"
+      pwarn.call "unexpected end of patch file"
+      exit 1
+    end
+    bytes
+  end
+
+  # process each record
+  while true
+    offset = pread.call(3)
+
+    # "EOF" marks the end of patch
+    if offset == "EOF"
+      # count the remaining bytes in the file
+      rem = patch.stat.size - patch.pos
+
+      case rem
+      when 0
+        pinfo.call "end of patch"
+      when 3
+        # truncate support, as in Lunar IPS
+        tru = unpack3(pread.call(3))
+        pinfo.call "truncate to #{hex(tru)} bytes"
+        file.truncate(tru) if filename
+      else
+        pwarn.call "unexpected data after end of " +
+            "patch, #{hex(rem)} bytes ..."
+        pwarn.call "... problem with offset " +
+            "\"EOF\" #{hex("EOF")}?"
+        exit 1
+      end
+
+      break
+    end
+
+    offset = unpack3(offset)
+    length = unpack2(pread.call(2))
+    case length
+    when 0
+      # RLE support
+      length = unpack2(pread.call(2))
+      byte = pread.call(1)
+
+      pinfo.call "patch to file offset #{hex(offset)}, " +
+          "length #{hex(length)}, RLE"
+      if filename
+        file.pos = offset
+        file.write(byte * length)
+      end
+    else
+      pinfo.call "patch to file offset #{hex(offset)}, " +
+          "length #{hex(length)}"
+      if filename
+        file.pos = offset
+        file.write(pread.call(length))
+      else
+        pread.call(length)
+      end
+    end
+  end
+
+  patch.close
+end
+
+file.close if filename
