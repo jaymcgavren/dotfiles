@@ -7,7 +7,7 @@ export PATH=${PATH}:/usr/local/Cellar/python
 export PATH=${PATH}:${HOME}/Applications/jruby-1.6.4/bin
 export PATH=${HOME}/Shortcuts:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
-export PATH=$PATH:${HOME}/Applications/android-sdk/tools/
+export PATH=$PATH:${HOME}/Applications/android-sdk/tools
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
