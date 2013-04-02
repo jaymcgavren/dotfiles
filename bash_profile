@@ -41,6 +41,8 @@ alias clear='ruby -e "puts %Q{\n} * 80"'
 alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 alias jrake='jruby -S rake'
 alias l='ls -alF'
+alias latest_download='latest ~/Downloads'
+alias latest_screenshot='latest ~/Pictures/Screenshots'
 alias please=sudo
 alias serve_this_dir='python -m SimpleHTTPServer'
 
@@ -48,6 +50,9 @@ alias serve_this_dir='python -m SimpleHTTPServer'
 #Functions.
 function gitrm {
     git status | grep 'deleted' | awk '{print $3}' | xargs git rm
+}
+function latest {
+  ls -t $1/* | head -n 1
 }
 function toss {
     for filename; do
