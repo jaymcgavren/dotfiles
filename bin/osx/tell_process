@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+process, command = ARGV
+fail "Usage: #{$0} <process_name> <command>" unless process and command
+
+def run_script(script)
+  pipe = IO.popen(["osascript", { STDERR => STDOUT }], "r+")
+  pipe.puts script
+  pipe.close_write
+  puts pipe.readlines
+end
+
+run_script(<<-EOD)
+  tell application "#{process}"
+    activate
+    tell application "System Events"
+      tell process "#{process}"
+        #{command}
+      end tell
+    end tell
+  end tell
+EOD
