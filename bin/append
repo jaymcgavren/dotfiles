@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
+input = STDIN.isatty ? nil : STDIN.read
+suffix = ARGV.join(' ')
 
-require 'utility'
+def append(string, suffix)
+  string.split(/\n/).map{|line| line + suffix}.join("\n")
+end
 
-puts Util.new.get_piped_data.append(ARGV.join(' '))
+puts append(input, suffix)

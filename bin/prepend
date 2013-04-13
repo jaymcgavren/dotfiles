@@ -1,4 +1,10 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility'
-puts Util.new.get_piped_data.prepend(ARGV.join(' '))
+
+input = STDIN.isatty ? nil : STDIN.read
+prefix = ARGV.join(' ')
+
+def prepend(string, prefix)
+  string.split(/\n/).map{|line| prefix + line}.join("\n")
+end
+
+puts prepend(input, prefix)
