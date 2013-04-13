@@ -6,4 +6,4 @@ def append(string, suffix)
   string.split(/\n/).map{|line| line + suffix}.join("\n")
 end
 
-puts append(input, suffix)
+print append(input, suffix)

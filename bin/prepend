@@ -7,4 +7,4 @@ def prepend(string, prefix)
   string.split(/\n/).map{|line| prefix + line}.join("\n")
 end
 
-puts prepend(input, prefix)
+print prepend(input, prefix)
