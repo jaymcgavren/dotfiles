@@ -6,9 +6,10 @@
 # Author: Doga Armangil, armangild@yahoo.com
 
 PODCATCHER_WEBSITE = 'http://podcatcher.rubyforge.org/'
-PODCATCHER_VERSION = '3.1.4'
+PODCATCHER_VERSION = '3.1.6'
 
-# todo: # comments out line in --arguments file
+# todo: allow files to be selected not only by its MIME type, but also other attributes. Example: --content '^video/ width:680-1024 height:400'
+# todo: --proxy option
 # todo: download at most one enclosure or media:content per rss item
 # todo: support for --content and --language options in search mode
 # todo: code refactoring: do not duplicate option handling for 'options' option, factor out conversion between MIME type and file extension, avoid code duplication between implementations of download and search functions
@@ -24,6 +25,8 @@ PODCATCHER_VERSION = '3.1.4'
 # todo: option to download shows concurrently
 # todo: "lock" directory to prevent concurrency issues
 # todo: option to throttle non-BitTorrent downloads
+# 3.1.6: fix a bug whereby a failed content download caused all other content from the same feed to be ignored, fix ruby 1.9 compatibility bug (String#each becomes String#each_line)
+# 3.1.5: updated --arguments file format (# now comments out line), updated sponsor message
 # 3.1.4: added publication date to content titles in generated playlists, added better handling of invalid URLs in feeds and subscription lists (such URLs are now simply ignored instead of causing the whole document to be skipped)
 # 3.1.3: --restrictednames option is now enabled by default, fixed directory name generation bug that allowed '!' character when --perfeed and --restrictednames options were used simultaneously, updated sponsor message
 # 3.1.2: modified the help text that appears when --help option is used, updated sponsor message
@@ -476,7 +479,10 @@ option_parser = OptionParser.new() do |c|
 		"Read arguments from specified file.",
 		"Rules:",
 		"* accepts one argument per line,",
-		"* may be used several times in one command.\n") do |e|
+		"* ignores empty lines and lines starting",
+		"  with #,",
+		"* this option may be used several times",
+		"  in one command.\n") do |e|
 		begin 
 			open(e) do |f|
 				loop do
@@ -484,6 +490,7 @@ option_parser = OptionParser.new() do |c|
 					break unless line
 					line = line.chomp.strip
 					next if line.length == 0
+					next if line =~ /^\s*#/
 					arguments << line
 				end
 			end
@@ -1440,14 +1447,14 @@ class Cache
 						content = OpenStruct.new
 						XPath.each(e2,"parent::/title/text()") do |node|
 							content.title = ""
-							node.value.each() do |e3| #remove line breaks
+							node.value.each_line() do |e3| #remove line breaks
 								content.title+= e3.chomp+" "
 							end
 							content.title.strip!
 						end
 						XPath.each(e2,"parent::/created/text()") do |node|
 							pub_date = ""
-							node.value.each() do |e3| #remove line breaks
+							node.value.each_line() do |e3| #remove line breaks
 								pub_date+= e3.chomp+" "
 							end
 							begin 
@@ -1490,7 +1497,7 @@ class Cache
 					#title
 					node = XPath.first(doc.dom,"/feed/title/text()")
 					feed_title = ""
-					node.value.each() do |e3| #remove line breaks
+					node.value.each_line() do |e3| #remove line breaks
 						feed_title += e3.chomp+" "
 					end
 					feed_title.strip!
@@ -1506,7 +1513,7 @@ class Cache
 							title = ''
 							XPath.each(e1,"title/text()") do |node|
 								title = ''
-								node.value.each() do |e3| #remove line breaks
+								node.value.each_line() do |e3| #remove line breaks
 									title+= e3.chomp+" "
 								end
 								title.strip!
@@ -1514,7 +1521,7 @@ class Cache
 							pub_date = nil
 							XPath.each(e1,"pubDate/text()") do |node|
 								pub_date = ""
-								node.value.each() do |e3| #remove line breaks
+								node.value.each_line() do |e3| #remove line breaks
 									pub_date+= e3.chomp+" "
 								end
 								begin 
@@ -1617,7 +1624,7 @@ class Cache
 					#title
 					node = XPath.first(doc.dom,"//channel/title/text()")
 					feed_title = ""
-					node.value.each() do |e3| #remove line breaks
+					node.value.each_line() do |e3| #remove line breaks
 						feed_title += e3.chomp+" "
 					end
 					feed_title.strip!
@@ -1948,6 +1955,7 @@ class Cache
 					end
 					sleep 5
 				end
+				redo unless content.file # skip unavailable enclosures
 				redo if @opt.itemsize > itemsize
 				itemsize = 0
 			end
@@ -2499,20 +2507,19 @@ end
 
 if opt.verbose
         $stderr.puts ""
-        $stderr.puts "   *************************************************************************"
-        $stderr.puts "   ****   [Sponsor] Qworum - Component technology for web applications  ****"
-        $stderr.puts "   *************************************************************************"
-        $stderr.puts "   ****   Qworum Enterprise:                                            ****"
-        $stderr.puts "   ****   Achieve business agility. With its groundbreaking support     ****"
-        $stderr.puts "   ****   for interactive and composable services, Qworum provides      ****"
-        $stderr.puts "   ****   unprecedented flexibility for enterprise SOA solutions.       ****"
-        $stderr.puts "   ****                                                                 ****"
-        $stderr.puts "   ****   Marketplace:                                                  ****"
-        $stderr.puts "   ****   Reduce your development costs. Buy readymade components       ****"
-        $stderr.puts "   ****   for your enterprise IT system or your internet website.       ****"
-        $stderr.puts "   ****                                                                 ****"
-        $stderr.puts "   ****   Learn more at http://www.qworum.com/                          ****"
-        $stderr.puts "   *************************************************************************"
+        $stderr.puts "   *********************************************************************"
+        $stderr.puts "   ****   Qworum - A platform for web-based services      (sponsor) ****"
+        $stderr.puts "   *********************************************************************"
+        $stderr.puts "   ****   Sell and buy services:                                    ****"
+        $stderr.puts "   ****   Host services on your own domain; sell them to websites   ****"
+        $stderr.puts "   ****   or businesses on the service marketplace.                 ****"
+        $stderr.puts "   ****                                                             ****"
+        $stderr.puts "   ****   Build enterprise information systems:                     ****"
+        $stderr.puts "   ****   Use Qworum in your information system, and enjoy the      ****"
+        $stderr.puts "   ****   benefits of a powerful SOA technology.                    ****"
+        $stderr.puts "   ****                                                             ****"
+        $stderr.puts "   ****   Learn more at http://www.qworum.com/                      ****"
+        $stderr.puts "   *********************************************************************"
         $stderr.puts ""
 end
 
