@@ -11,6 +11,7 @@ export PATH=$PATH:${HOME}/Applications/android-sdk/tools
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
+  export PATH=$PATH:/Applications/dart/dart-sdk/bin
 elif [[ $OSTYPE == *linux* ]]; then
   export PATH=${HOME}/dotfiles/bin/linux:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/linux:${PATH}
