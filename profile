@@ -20,7 +20,6 @@ export PATH=${HOME}/dotfiles_local/bin:${PATH}
 
 export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
-export RUBYLIB=lib:${RUBYLIB}
 
 #Create files as read-only by group, untouchable by world.
 umask 027
