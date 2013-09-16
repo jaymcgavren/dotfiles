@@ -2,6 +2,5 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
 require 'utility/storage'
 
-storage = Object.new
-storage.extend Utility::Storage
-print storage.load(:storage).keys.sort.join("\n")
+include Utility::Storage
+print load(:storage).keys.sort.join("\n")

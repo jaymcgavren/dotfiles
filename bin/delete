@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility'
+require 'utility/storage'
 
-util = Util.new
-storage = util.load(:storage)
+include Utility::Storage
+storage = load(:storage)
 storage.delete(ARGV.join(' '))
-util.save(:storage, storage)
+save(:storage, storage)

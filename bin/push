@@ -4,13 +4,12 @@ require 'utility/main'
 
 key = ARGV.join(' ')
 
-utility = Object.new
-utility.extend Utility::Main
+include Utility::Main
 
-storage = utility.load(:storage) || {}
+storage = load(:storage) || {}
 if storage[key]
-  storage[key] << utility.get_piped_data
+  storage[key] << get_piped_data
 else
-  storage[key] = utility.get_piped_data
+  storage[key] = get_piped_data
 end
-utility.save(:storage, storage)
+save(:storage, storage)
