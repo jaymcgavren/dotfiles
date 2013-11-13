@@ -1,0 +1,33 @@
+set completion-ignore-case On
+
+# Emacs bindings for shell.
+"\ew": copy-region-as-kill
+"\C-w": kill-region
+# These bindings all seem to work by default, so leaving them commented out.
+# "\e\C-h": backward-kill-word
+# "\e[D": backward-word
+# "\e<": beginning-of-history
+# "\C-a": beginning-of-line
+# "\ec": capitalize-word
+# "\C-l": clear-screen
+# "\C-i": complete
+# "\e\e": complete
+# "\e!": complete-command
+# "\e/": complete-filename
+# "\e@": complete-hostname
+# "\e{": complete-into-braces
+# "\e$": complete-variable
+# "\C-d": delete-char
+# "\el": downcase-word
+# "\e>": end-of-history
+# "\C-e": end-of-line
+# "\e[C": forward-word
+# "\e[B": history-search-forward
+# "\e[A": history-search-backward
+# "\e.": insert-last-argument
+# "\C-k": kill-line
+# "\ed": kill-word
+# "\e\C-r": revert-line
+# "\C-_": undo
+# "\eu": upcase-word
+
