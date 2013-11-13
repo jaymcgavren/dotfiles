@@ -18,6 +18,11 @@ set -o emacs
 #Only "exit" or "logout" will log off the system.
 set -o ignoreeof
 
+#stty binds kill = ^U and werase = ^W by default.
+#This will allow setting these keys in ~/.inputrc instead.
+stty werase undef
+stty kill undef
+
 #Set up text editing/viewing.
 export LANG=en_US.utf-8
 export CLICOLOR=1 #Colorizes output of ls and others.
