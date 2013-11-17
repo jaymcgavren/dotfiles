@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+APPLICATION=$1; shift
+COMMAND="$*"
+`osascript -e "tell application \"${APPLICATION}\"" -e "${COMMAND}" -e "end tell"`
