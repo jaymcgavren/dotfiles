@@ -1,0 +1,120 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+config keyboardLayout qwerty
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+#config windowHintsDuration 5
+config windowHintsSpread true
+#config windowHintsOrder persist
+
+# Monitor Aliases
+alias mon-laptop      0
+alias mon-1080p    1
+
+# Misc Aliases
+alias showHintsLeftHand hint AOEUIYQJKX
+alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
+alias browser 'Google Chrome'
+alias editor 'Sublime Text 2'
+alias terminal 'Terminal'
+
+# Abstract positions
+alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
+alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
+alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY    screenSizeX/2;screenSizeY
+alias rightmost     move screenOriginX+screenSizeX*0.4;screenOriginY  screenSizeX*0.6;screenSizeY
+alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSizeX*0.4;screenSizeY
+alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
+alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
+# Concrete positions
+alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-laptop}
+alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
+alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
+alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-1080p}
+alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-1080p}
+alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-1080p}
+alias 2-rightbottom move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2    screenSizeX/2;screenSizeY/2       ${mon-1080p}
+
+# 2 Monitor layout
+layout 2monitors ${terminal}:MAIN_FIRST                       ${2-rightbottom} | ${1-left}
+layout 2monitors ${browser}:REPEAT                          ${1-full}
+layout 2monitors 'Nightly':REPEAT                          ${1-full}
+layout 2monitors ${editor}:REPEAT              ${1-full}
+layout 2monitors 'Mail':MAIN_FIRST                        ${2-left}
+layout 2monitors 'Path Finder':MAIN_FIRST                 ${2-righttop}
+layout 2monitors 'Xcode':REPEAT                           ${1-full}
+layout 2monitors 'Eclipse':REPEAT                         ${1-full}
+layout 2monitors 'iTunes':REPEAT                          ${1-full}
+
+# 1 Monitor layout
+layout 1monitor ${terminal}:MAIN_FIRST                       ${1-right}
+layout 1monitor ${editor}:MAIN_FIRST              ${1-left}
+layout 1monitor ${browser}:REPEAT                          ${1-full}
+layout 1monitor 'Nightly':REPEAT                          ${1-full}
+layout 1monitor 'Mail':MAIN_FIRST                        ${1-full}
+layout 1monitor 'Path Finder':MAIN_FIRST                 ${1-full}
+layout 1monitor 'Xcode':REPEAT                           ${1-full}
+layout 1monitor 'Eclipse':REPEAT                         ${1-full}
+layout 1monitor 'iTunes':REPEAT                          ${1-full}
+
+# Default Layouts
+default 2monitors resolutions:${mon-laptop};${mon-1080p};
+default 1monitor  resolutions:${mon-laptop}
+
+# Numpad location Bindings
+# bind pad0 ${showHintsLeftHand}
+# bind pad1 ${leftless}
+# bind pad2 push bottom bar-resize:screenSizeY/2
+# bind pad3 ${rightless}
+# bind pad4 ${lefthalf}
+# bind pad5 ${full}
+# bind pad6 ${righthalf}
+# bind pad7 ${leftmost}
+# bind pad8 push top bar-resize:screenSizeY/2
+# bind pad9 ${rightmost}
+# bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-1080p}:8,3
+# bind pad+ throw next
+# bind pad. focus behind
+# bind pad* layout 2monitors
+# bind pad/ layout 1monitor
+# 
+# bind e:cmd  ${showNormalHint}
+
+# ======================================
+# Key combo to activate Slate
+# ======================================
+
+alias slatekey ctrl
+
+# Use the Slate task switcher (beta)
+# bind tab:${slatekey} switch
+
+# Location bindings
+# bind t:${slatekey} ${lefthalf}
+# bind n:${slatekey} ${full}
+# bind s:${slatekey} ${righthalf}
+# bind r:${slatekey} throw next
+
+# Resize Bindings
+#bind r:${slatekey} ${leftmost}
+#bind g:${slatekey} ${rightmost}
+
+# Focus Bindings
+# bind right:${slatekey}    focus right
+# bind left:${slatekey}     focus left
+# bind up:${slatekey}       focus up
+# bind down:${slatekey}     focus down
+
+# App bindings
+bind 7:${slatekey} focus ${terminal}
+bind 8:${slatekey} focus ${editor}
+bind 9:${slatekey} focus ${browser}
+bind 0:${slatekey} shell '/Users/jay/dotfiles_local/bin/osx/todo'
+
+# Disable OSX Cmd-Tab (to aid habituation):
+# bind tab:cmd shell '/usr/bin/time' # TODO - find a better no-op!
