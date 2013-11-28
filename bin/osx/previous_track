@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+osascript -e 'tell application "iTunes"'\
+  -e "previous track" \
+  -e "end tell"
