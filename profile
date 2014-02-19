@@ -4,6 +4,7 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=${PATH}:/usr/local/mysql/bin
 export PATH=${PATH}:/usr/local/Cellar/python
+export PATH=${PATH}:/usr/local/share/npm/bin
 export PATH=${PATH}:${HOME}/Applications/jruby-1.6.4/bin
 export PATH=${HOME}/Shortcuts:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
