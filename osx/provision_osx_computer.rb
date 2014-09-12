@@ -157,12 +157,15 @@ dropbox
 # dwarf-fortress
 electric-sheep
 emacs
+# freeciv
 gimp
 gitx
 google-drive
 google-earth
+gridwars
 handbrake
 handbrakecli
+hedgewars
 hipchat
 horndis
 jumpcut
@@ -171,31 +174,32 @@ libreoffice
 onepassword
 vagrant
 mame
-# menumeters # No recipe available.
+menumeters # No recipe available.
 minecraft
 nethackcocoa
 node
-# noiz2sa
+noiz2sa
 omnidazzle
 phantomjs
-# picasa
+picasa
 # postgres
 # prezi
-# processing
+processing
 r
 rescuetime
-# rrootage
+rrootage
+# sauerbraten
 screenflow
 screenhero
-# scummvm
+scummvm
 sequel-pro
-# sketchup
+sketchup
 skype
 slate
 snes9x
 # soundflower
 sqlite-database-browser
-# steam
+steam
 stella
 sublime-text
 teeworlds
@@ -203,16 +207,16 @@ teeworlds
 totalterminal
 # tower
 # transmit
-# unity-web-player
-# unity3d
+unity-web-player
+unity3d
 vagrant
 virtualbox
 vlc
-# wesnoth
-# wireshark
+wesnoth
+wireshark
 xaos
 xbox360-controller-driver
-# xscreensaver
+xscreensaver
 EOD
 
 def run(command)
