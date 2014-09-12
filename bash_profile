@@ -29,7 +29,7 @@ export CLICOLOR=1 #Colorizes output of ls and others.
 export EDITOR=vi
 export VISUAL=$EDITOR
 export PAGER=less
-export LESS='-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
+export LESS='-r-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
 
 export ENV=$HOME/.bashrc
 
