@@ -43,6 +43,7 @@ export PROMPT_COMMAND='history -a'
 #Aliases.
 alias alert='growlnotify -s'
 alias be='bundle exec'
+alias bi='bundle install --quiet'
 alias clear='ruby -e "puts %Q{\n} * 80"'
 alias db=sequel_pro
 alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
