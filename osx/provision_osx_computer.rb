@@ -118,6 +118,7 @@ sdl
 sox
 sqlite
 subversion
+supertux --devel
 svn
 the_silver_searcher
 tmux
@@ -225,6 +226,7 @@ end
 
 # Add additional Homebrew sources.
 run "brew tap homebrew/dupes"
+run "brew tap homebrew/games"
 
 # Set up Cask.
 run "brew install caskroom/cask/brew-cask"
