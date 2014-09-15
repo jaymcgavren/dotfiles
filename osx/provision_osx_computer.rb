@@ -244,5 +244,10 @@ end
 # Link .app files to /Applications.
 run "brew linkapps"
 
+# Clean up Homebrew cache.
+run "brew cleanup"
+run "brew prune"
+run "brew cask cleanup'
+
 # Configuration
 run "git config --global color.ui true"
