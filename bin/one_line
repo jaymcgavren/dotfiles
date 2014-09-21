@@ -1,5 +1,3 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility'
 
-print Util.new.get_piped_data.one_line(' ')
+print readlines.join(" ").chomp
