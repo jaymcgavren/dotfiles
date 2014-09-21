@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+#Slurp all piped data.
+text = gets(nil)
+
+#Find all text between triple-backticks, over multiple lines, and print it.
+puts text.scan(/^```(?:\w*)(.*?)```/m)
