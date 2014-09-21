@@ -20,8 +20,9 @@ alias mon-1080p    1
 alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
-alias editor 'Sublime Text 2'
+alias editor 'Sublime Text'
 alias terminal 'Terminal'
+alias typesetting 'InDesign'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -111,6 +112,7 @@ alias slatekey ctrl
 # bind down:${slatekey}     focus down
 
 # App bindings
+bind 6:${slatekey} focus ${typesetting}
 bind 7:${slatekey} focus ${terminal}
 bind 8:${slatekey} focus ${editor}
 bind 9:${slatekey} focus ${browser}
