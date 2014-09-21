@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+usage = <<-EOD
+make_bookmark launcher_name url
+outputs shell script to current directory
+EOD
+launcher_name = ARGV.shift
+url = ARGV.shift
+puts usage and fail if launcher_name.empty? or url.empty?
+
+fail "#{launcher_name} script exists" if File.exist?(launcher_name)
+
+File.open(launcher_name, 'a') do |file|
+  file.puts "#!/usr/bin/env sh"
+  escaped_url = url.gsub(/'/, %q{\\'})
+  file.puts "open '#{escaped_url}'"
+end
+File.chmod(0750, launcher_name)
