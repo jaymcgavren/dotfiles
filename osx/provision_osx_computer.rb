@@ -249,7 +249,7 @@ run "brew linkapps"
 # Clean up Homebrew cache.
 run "brew cleanup"
 run "brew prune"
-run "brew cask cleanup'
+run "brew cask cleanup"
 
 # Configuration
 run "git config --global color.ui true"
