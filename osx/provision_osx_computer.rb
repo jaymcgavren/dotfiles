@@ -143,9 +143,6 @@ zsh
 EOD
 
 cask_packages = parse_package_list(<<-EOD)
-google-chrome
-firefox
-java
 adobe-reader
 amazon-music
 anki
@@ -158,9 +155,11 @@ dropbox
 # dwarf-fortress
 electric-sheep
 emacs
+firefox
 # freeciv
 gimp
 gitx
+google-chrome
 google-drive
 google-earth
 gridwars
@@ -169,11 +168,10 @@ handbrakecli
 hedgewars
 hipchat
 horndis
+java
 jumpcut
 kid3
 libreoffice
-onepassword
-vagrant
 mame
 menumeters # No recipe available.
 minecraft
@@ -181,6 +179,7 @@ nethackcocoa
 node
 noiz2sa
 omnidazzle
+onepassword
 phantomjs
 picasa
 # postgres
