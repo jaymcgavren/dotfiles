@@ -1,0 +1,43 @@
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	st = status -sb
+	mylog = log --pretty=format:'%h %s [%an]' --graph
+	grp = grep --break --heading --line-number
+[gui]
+	recentrepo = C:/work/git_test
+[github]
+	user = jaymcgavren
+	token = 0bd92dd12fecc05c6c00a4db6d3463a5
+[color]
+	status = auto
+	branch = auto
+	ui = true
+	# diff = auto
+	# grep = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green
+	changed = red
+	untracked = cyan
+[core]
+	excludesfile = /Users/jay/dotfiles/gitexcludes
+	editor = edit -w
+[http]
+[heroku]
+	account = envylabs
+[push]
+	default = current
+[user]
+	email = jay@mcgavren.com
+	name = Jay McGavren
+[grep]
+	extendRegexp = true
+	lineNumber = true
