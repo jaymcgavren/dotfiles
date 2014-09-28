@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
 def parse_package_list(string)
-  string.split("\n").reject{|package| package =~ /\A\s*\#/}
+  lines = string.split("\n")
+  active_packages = lines.reject{|package| package =~ /\A\s*\#/}
+  active_packages.each { |package| package.sub!(/\s*\#.*\Z/, '') }
+  active_packages
 end
 
 brew_packages = parse_package_list(<<-EOD)
@@ -180,6 +183,7 @@ node
 noiz2sa
 omnidazzle
 onepassword
+openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
 phantomjs
 picasa
 # postgres
@@ -196,7 +200,6 @@ sequel-pro
 sketchup
 skype
 slate
-snes9x
 # soundflower
 sqlite-database-browser
 steam
@@ -214,6 +217,7 @@ virtualbox
 vlc
 wesnoth
 wireshark
+wjoy # Wii controller driver.
 xaos
 xbox360-controller-driver
 xscreensaver
