@@ -41,7 +41,7 @@ shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
 #Aliases.
-alias alert='growlnotify -s'
+alias alert='terminal-notifier'
 alias be='bundle exec'
 alias bi='bundle install --quiet'
 alias clear='ruby -e "puts %Q{\n} * 80"'
