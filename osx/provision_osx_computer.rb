@@ -8,6 +8,8 @@ def parse_package_list(string)
 end
 
 brew_packages = parse_package_list(<<-EOD)
+ack
+aspell
 atk
 autoconf
 automake
@@ -123,6 +125,7 @@ sqlite
 subversion
 supertux --devel
 svn
+terminal-notifier # Alerts to OSX Notification Center via terminal.
 the_silver_searcher
 tmux
 todo-txt
@@ -152,7 +155,8 @@ anki
 audacity
 bettertouchtool
 celestia
-desmume
+desmume # Nintendo DS emulator
+dolphin # Nintendo GameCube/Wii emulator
 dosbox
 dropbox
 # dwarf-fortress
