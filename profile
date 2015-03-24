@@ -19,11 +19,16 @@ elif [[ $OSTYPE == *linux* ]]; then
 fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
 
+# if [[ $OSTYPE == *darwin* ]]; then
+#   export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
+# fi
+
+
 export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
 export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
 
-#Create files as read-only by group, untouchable by world.
-umask 027
+#Create files as read-only by group and world.
+umask 022
 
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/profile ]; then
