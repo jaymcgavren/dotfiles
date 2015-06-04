@@ -5,9 +5,6 @@
 	grp = grep --break --heading --line-number
 [gui]
 	recentrepo = C:/work/git_test
-[github]
-	user = jaymcgavren
-	token = 0bd92dd12fecc05c6c00a4db6d3463a5
 [color]
 	status = auto
 	branch = auto
@@ -31,8 +28,6 @@
 	excludesfile = /Users/jay/dotfiles/gitexcludes
 	editor = edit -w
 [http]
-[heroku]
-	account = envylabs
 [push]
 	default = current
 [user]
