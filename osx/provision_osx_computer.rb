@@ -179,6 +179,7 @@ handbrakecli
 hedgewars
 hipchat
 horndis
+# iterm2
 java
 jumpcut
 kid3
