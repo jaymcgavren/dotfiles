@@ -119,7 +119,11 @@ rsync
 s3fs
 scons
 screen
-sdl
+sdl # For game development
+sdl2 # For game development
+sdl2_image # For game development
+sdl2_ttf # For game development
+sdl2_mixer # For game development
 sox
 sqlite
 subversion
