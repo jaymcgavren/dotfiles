@@ -114,7 +114,7 @@ alias slatekey ctrl
 # App bindings
 bind 6:${slatekey} focus ${typesetting}
 bind 7:${slatekey} focus ${terminal}
-bind 8:${slatekey} focus ${editor}
+# bind 8:${slatekey} focus ${editor}
 bind 9:${slatekey} focus ${browser}
 bind 0:${slatekey} shell '/Users/jay/dotfiles_local/bin/osx/todo'
 
