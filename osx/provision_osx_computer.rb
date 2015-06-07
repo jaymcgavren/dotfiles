@@ -56,6 +56,7 @@ gnu-sed --default-names
 gnu-tar --default-names
 gnu-which --default-names
 gnutls --default-names
+go
 grep --default-names
 gtk+
 gzip
@@ -270,3 +271,6 @@ run "ln -s ~/dotfiles/inputrc ~/.inputrc"
 run "ln -s ~/dotfiles/irbrc ~/.irbrc"
 run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
+
+# Set up go language.
+mkdir ~/go

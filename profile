@@ -1,3 +1,6 @@
+#Go language setup.
+export GOPATH=${HOME}/go
+
 #Path setup.
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
@@ -9,6 +12,7 @@ export PATH=${PATH}:${HOME}/Applications/jruby-1.6.4/bin
 export PATH=${HOME}/Shortcuts:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
 export PATH=$PATH:${HOME}/Applications/android-sdk/tools
+export PATH=${PATH}:${GOPATH}/bin
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
