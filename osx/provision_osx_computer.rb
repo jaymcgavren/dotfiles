@@ -96,6 +96,7 @@ namebench
 netcat
 nettle
 node
+nodenv
 openssh --with-brewed-openssl
 openssl
 ossp-uuid
