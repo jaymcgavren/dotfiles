@@ -270,6 +270,7 @@ run "ln -s ~/dotfiles/gitconfig ~/.gitconfig"
 run "ln -s ~/dotfiles/gitignore ~/.gitignore"
 run "ln -s ~/dotfiles/inputrc ~/.inputrc"
 run "ln -s ~/dotfiles/irbrc ~/.irbrc"
+run "ln -s ~/dotfiles/rp5rc ~/.rp5rc"
 run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
 
