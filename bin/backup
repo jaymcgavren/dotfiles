@@ -7,6 +7,15 @@ if [ ${#HOSTNAME} -eq 0 ]; then
   echo "Please set HOSTNAME environment variable and re-run."
   exit 65
 fi
+
+if [ -d "$BACKUP_LOCATION" ]; then
+  mkdir "$BACKUP_LOCATION/$HOSTNAME/"
+else
+  echo "$BACKUP_LOCATION directory does not exist"
+  exit 1;
+fi
+
 for filename; do
-  rsync --verbose --compress --recursive --checksum --times --perms --links --delete "$filename" "$BACKUP_LOCATION/$HOSTNAME/$filename/"
+  mkdir -p "$BACKUP_LOCATION/$HOSTNAME/$filename/"
+  rsync --verbose --compress --recursive --checksum --times --perms --links --delete "$filename/" "$BACKUP_LOCATION/$HOSTNAME/$filename/"
 done
