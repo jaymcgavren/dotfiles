@@ -64,6 +64,7 @@ layout 1monitor 'Path Finder':MAIN_FIRST                 ${1-full}
 layout 1monitor 'Xcode':REPEAT                           ${1-full}
 layout 1monitor 'Eclipse':REPEAT                         ${1-full}
 layout 1monitor 'iTunes':REPEAT                          ${1-full}
+layout 1monitor 'Slack':REPEAT                           ${1-right}
 
 # Default Layouts
 # default 2monitors resolutions:${mon-laptop};${mon-1080p};
