@@ -26,7 +26,7 @@ stty kill undef
 #Set up text editing/viewing.
 export LANG=en_US.utf-8
 export CLICOLOR=1 #Colorizes output of ls and others.
-export EDITOR=vi
+export EDITOR=emacs
 export VISUAL=$EDITOR
 export PAGER=less
 export LESS='-r-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
