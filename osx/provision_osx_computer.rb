@@ -17,6 +17,7 @@ bash-completion
 bats
 binutils
 brew-cask
+brogue
 cabextract
 cmake
 cmatrix
