@@ -30,6 +30,7 @@ export EDITOR=emacs
 export VISUAL=$EDITOR
 export PAGER=less
 export LESS='-r-i-P%f (%i/%m) Line %lt/%L' #Better prompt, case-insensitive search by default.
+export LS_COLORS=$LS_COLORS:'di=1;44:'
 
 export ENV=$HOME/.bashrc
 
@@ -48,6 +49,7 @@ alias clear='ruby -e "puts %Q{\n} * 80"'
 alias db=sequel_pro
 alias find_source='find . -type f -not -path "*/target/*" -not -path "*/.svn/*" -not -path "*/.git/*" -not -name ".DS_Store" -not -iname "*.jar" -not -iname "*.gif" -not -iname "*.jpg" -not -iname "*.png"'
 alias jrake='jruby -S rake'
+alias ls='ls --color=auto'
 alias l='ls -alF'
 alias latest_download='latest ~/Downloads'
 alias latest_screenshot='latest ~/Pictures/Screenshots'
