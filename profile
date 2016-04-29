@@ -16,6 +16,11 @@ export PATH=${HOME}/Shortcuts:${PATH}
 export PATH=${HOME}/dotfiles/bin:${PATH}
 export PATH=$PATH:${HOME}/Applications/android-sdk/tools
 export PATH=${PATH}:${GOPATH}/bin
+# Replace OSX core utilities with GNU versions.
+if [[ $OSTYPE == *darwin* ]]; then
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
