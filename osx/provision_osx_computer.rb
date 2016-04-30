@@ -182,7 +182,7 @@ handbrakecli
 hedgewars
 hipchat
 horndis
-# iterm2
+iterm2
 java
 jumpcut
 kid3
@@ -219,7 +219,7 @@ stella
 sublime-text
 teeworlds
 # torbrowser
-totalterminal
+# totalterminal
 # tower
 # transmit
 unity-web-player
@@ -274,6 +274,9 @@ run "ln -s ~/dotfiles/irbrc ~/.irbrc"
 run "ln -s ~/dotfiles/rp5rc ~/.rp5rc"
 run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
+
+# Eliminate useless fading animation on iTerm2 hotkey window.
+run "defaults write com.googlecode.iterm2 HotkeyTermAnimationDuration -float 0.00001"
 
 # Set up go language.
 mkdir ~/go
