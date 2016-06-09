@@ -13,6 +13,7 @@ aspell
 atk
 autoconf
 automake
+bash-git-prompt
 bash-completion
 bats
 binutils
