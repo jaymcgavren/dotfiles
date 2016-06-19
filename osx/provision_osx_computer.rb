@@ -210,6 +210,7 @@ screenflow
 screenhero
 scummvm
 sequel-pro
+shoes
 sketchup
 skype
 slate
