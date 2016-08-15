@@ -22,7 +22,7 @@ alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
 alias editor 'Sublime Text'
-alias terminal 'iTerm'
+alias terminal 'iTerm2'
 alias typesetting 'InDesign'
 
 # Abstract positions
