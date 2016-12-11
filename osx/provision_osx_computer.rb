@@ -28,7 +28,6 @@ cowsay
 ctags
 curl
 diffutils
-docker
 dos2unix
 ed --default-names
 emacs
@@ -164,6 +163,7 @@ audacity
 bettertouchtool
 celestia
 desmume # Nintendo DS emulator
+docker
 dolphin # Nintendo GameCube/Wii emulator
 dosbox
 dropbox
