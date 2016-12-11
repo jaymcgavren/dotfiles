@@ -98,6 +98,7 @@ netcat
 nettle
 node
 nodenv
+open-tyrian # Shoot-em-up game
 openssh --with-brewed-openssl
 openssl
 ossp-uuid
