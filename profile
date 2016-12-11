@@ -4,9 +4,6 @@ export GOPATH=${HOME}/go
 #nodenv setup.
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
-#Docker setup.
-eval "$(docker-machine env default)"
-
 #Path setup.
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
