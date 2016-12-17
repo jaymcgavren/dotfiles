@@ -124,29 +124,25 @@
 	<dict>
 		<key>Close</key>
 		<string>@~^$w</string>
+		<key>Minimize</key>
+		<string>@~^$m</string>
 	</dict>
-	<key>NSWindow Frame Preferences</key>
-	<string>4 572 924 485 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>671 258 620 392 0 0 1920 1057 </string>
+	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>248 249 796 473 0 0 1920 1057 </string>
+	<string>230 92 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 16 1915 1041 0 0 1920 1057 </string>
+	<string>0 728 1920 329 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>5 4 1915 1053 0 0 1920 1057 </string>
+	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 4 1915 1053 0 0 1920 1057 </string>
+	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 4 1915 1053 0 0 1920 1057 </string>
+	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>0 4 1915 1053 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>4 4 1915 1053 0 0 1920 1058 </string>
-	<key>NSWindow Frame iTerm Window 7</key>
-	<string>4 5 1915 1053 0 0 1920 1058 </string>
+	<string>5 4 1915 1053 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2743,16 +2739,14 @@
 			<string>/Users/jay</string>
 		</dict>
 	</array>
-	<key>NoSyncInstallationId</key>
-	<string>39154317-86FB-4C21-92B3-81B8D4153AC3</string>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<key>NoSyncInstallationId</key>
+	<string>9DDC81C0-3578-411E-BE48-CB98B4DAEE0A</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>492987951.28662801</real>
+	<real>498163593.37316501</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2761,6 +2755,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<true/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -2800,6 +2796,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/jay/dotfiles/osx/iterm</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2813,11 +2811,13 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=63</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=20</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-14T07:31:06Z</date>
+	<date>2016-12-16T23:08:12Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2865,6 +2865,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.10</string>
+	<string>3.0.13</string>
 </dict>
 </plist>
