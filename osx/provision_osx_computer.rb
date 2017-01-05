@@ -232,7 +232,6 @@ virtualbox
 vlc
 wesnoth
 wireshark
-wjoy # Wii controller driver.
 xaos
 xbox360-controller-driver
 xscreensaver
