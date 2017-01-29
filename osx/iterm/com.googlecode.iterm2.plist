@@ -130,15 +130,15 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>230 92 796 473 0 0 1920 1057 </string>
+	<string>99 165 918 381 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 728 1920 329 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 16 1915 1041 0 0 1920 1057 </string>
+	<string>0 4 1915 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 16 1915 1041 0 0 1920 1057 </string>
+	<string>0 4 1915 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 16 1915 1041 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -1501,13 +1501,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.014099587686359882</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.73333334920000004</real>
+				<real>0.59380084276199341</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.07927384227514267</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -1576,12 +1576,16 @@
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.014681842178106308</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.59195423126220703</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.079197727143764496</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -2743,6 +2747,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>9DDC81C0-3578-411E-BE48-CB98B4DAEE0A</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2815,7 +2823,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-16T23:08:12Z</date>
+	<date>2017-01-29T20:17:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2866,5 +2874,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.0.13</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
