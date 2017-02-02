@@ -99,6 +99,3 @@ fi
 if [ -f $HOME/dotfiles_local/bash_profile ]; then
     . $HOME/dotfiles_local/bash_profile
 fi
-
-#Set up fasd.
-eval "$(fasd --init auto)"

@@ -32,7 +32,6 @@ dos2unix
 ed --default-names
 emacs
 faac
-fasd
 fceux
 ffmpeg
 findutils --default-names
