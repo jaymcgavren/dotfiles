@@ -20,6 +20,7 @@ binutils
 brew-cask
 brogue
 cabextract
+cliclick # Script mouse clicks
 cmake
 cmatrix
 composer
