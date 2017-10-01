@@ -1,0 +1,14 @@
+HOME=/Users/jay
+SHELL=/bin/bash
+PATH=$HOME/dotfiles_local/bin:$HOME/dotfiles/bin:/usr/local/opt/coreutils/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/usr/local/mysql/bin
+
+# 10 04 * * 1,2,3,4,5 /Users/jay/dotfiles/bin/add_files "/Users/jay/Music/iTunes/iTunes Music/" "jay@media:/media/Backup/media/"
+# 10 03 * * 1,2,3,4,5 /Users/jay/dotfiles/bin/add_files "/Users/jay/Documents/content/" "jay@media:/media/Backup/content/"
+
+# 10 02 * * * /Users/jay/dotfiles/bin/backup "$HOME/Projects/" "$HOME/Documents/"
+
+# 30 07 * * FRI-SUN do_writing
+# 30 07 * * MON-THU do_work
+
+# Email a report of largest files at 3 AM on the 1st of each month.
+0 3 1 * * du -Sh / | sort -rh | head -n 100 | mail -s 'Large directory report' jay@mcgavren.com
