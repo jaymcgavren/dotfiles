@@ -1,8 +1,21 @@
+# Set up the Readline library for programs that use it.
+# This includes bash and irb.
+# C-x C-r will re-read this file.
+# To output current bindings and variables (including defaults)
+# in a format suitable for adding to this file, run:
+# $ bind -p -v 
+
+$include /etc/Inputrc
+
+set editing-mode emacs 
 set completion-ignore-case On
 
 # Emacs bindings for shell.
+$if mode=emacs
 "\ew": copy-region-as-kill
 "\C-w": kill-region
+$endif
+
 # These bindings all seem to work by default, so leaving them commented out.
 # "\e\C-h": backward-kill-word
 # "\e[D": backward-word
