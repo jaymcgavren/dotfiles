@@ -1,12 +1,2 @@
-#!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-
-require 'utility'
-
-util = Util.new
-Utility::Email::Email.new(
-  :senders => [util.load(:home_email)],
-  :recipients => [util.load(:home_email)],
-  :subject => "Note: #{ARGV.join(' ')}",
-  :body => util.get_piped_data
-).send
+#!/usr/bin/env sh
+mail -s "Note: $*" `cat $HOME/dotfiles_local/store/home_email.txt` 
