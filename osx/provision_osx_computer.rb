@@ -91,6 +91,7 @@ mad
 markdown
 mcrypt
 memcached
+mg
 mhash
 mysql
 namebench
