@@ -41,11 +41,6 @@ export HISTFILESIZE=100000
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
-#Set up cd command. DO NOT EXPORT; that will break some shell scripts.
-CDPATH=:${CDPATH} # Ensures current directory is scanned first.
-CDPATH=${CDPATH}:${HOME}/Projects
-CDPATH=${CDPATH}:${HOME}/Downloads
-
 #Aliases.
 alias alert='terminal-notifier'
 alias be='bundle exec'
