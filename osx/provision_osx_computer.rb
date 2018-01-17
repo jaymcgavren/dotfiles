@@ -158,10 +158,8 @@ zsh
 EOD
 
 cask_packages = parse_package_list(<<-EOD)
-adobe-reader
 amazon-music
 anki
-audacity
 bettertouchtool
 celestia
 desmume # Nintendo DS emulator
@@ -177,11 +175,8 @@ firefox
 gimp
 gitx
 google-chrome
-google-drive
-google-earth
 gridwars
 handbrake
-handbrakecli
 hedgewars
 hipchat
 horndis
@@ -194,17 +189,13 @@ mame
 menumeters # No recipe available.
 minecraft
 nethackcocoa
-node
 noiz2sa
 omnidazzle
-onepassword
 openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
-phantomjs
 picasa
 # postgres
 # prezi
 processing
-r
 rescuetime
 rrootage
 # sauerbraten
@@ -217,24 +208,20 @@ sketchup
 skype
 slate
 # soundflower
-sqlite-database-browser
 steam
 stella
 sublime-text
 teeworlds
 # torbrowser
-# totalterminal
 # tower
 # transmit
 unity-web-player
-unity3d
 vagrant
 virtualbox
 vlc
 wesnoth
 wireshark
 xaos
-xbox360-controller-driver
 xscreensaver
 EOD
 
