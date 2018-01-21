@@ -14,6 +14,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CheckTestRelease</key>
@@ -65,11 +67,13 @@
 	<key>HotKeyTogglesWindow</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
-	<integer>32</integer>
+	<integer>0</integer>
 	<key>HotkeyCode</key>
-	<integer>49</integer>
+	<integer>0</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524288</integer>
 	<key>HotkeyTermAnimationDuration</key>
@@ -87,9 +91,11 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/osx/iterm</string>
+	<string>~/logs</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 488}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -109,7 +115,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>315</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -130,18 +136,24 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>99 165 918 381 0 0 1280 777 </string>
+	<string>230 332 796 473 0 0 1920 1057 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>0 4 1920 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 728 1920 329 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 1915 1053 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 16 1915 1041 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 4 913 1053 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 4 1915 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 4 1915 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 16 1915 1041 0 0 1920 1057 </string>
+	<string>0 4 1915 1053 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
+	<string>0 4 1920 1053 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>5 4 1915 1053 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
 	<string>5 4 1915 1053 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -1030,7 +1042,7 @@
 				<real>1</real>
 			</dict>
 			<key>Automatically Log</key>
-			<true/>
+			<false/>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
@@ -2387,10 +2399,30 @@
 			</dict>
 			<key>Guid</key>
 			<string>1C966751-BBC0-4766-9462-58A3A2D4E511</string>
+			<key>Has Hotkey</key>
+			<true/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Characters</key>
+			<string> </string>
+			<key>HotKey Characters Ignoring Modifiers</key>
+			<string> </string>
+			<key>HotKey Key Code</key>
+			<integer>49</integer>
+			<key>HotKey Modifier Flags</key>
+			<integer>524288</integer>
+			<key>HotKey Window Animates</key>
+			<true/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
+			<key>HotKey Window Dock Click Action</key>
+			<integer>0</integer>
+			<key>HotKey Window Floats</key>
+			<false/>
+			<key>HotKey Window Reopens On Activation</key>
+			<false/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -2743,6 +2775,8 @@
 			<string>/Users/jay</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -2769,6 +2803,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2808,6 +2844,10 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
+	<key>QuickPasteBytesPerCall</key>
+	<integer>36</integer>
+	<key>QuickPasteDelayBetweenCalls</key>
+	<real>0.20066685974597931</real>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -2823,7 +2863,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-29T20:17:02Z</date>
+	<date>2018-01-21T01:36:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2832,8 +2872,14 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
+	<key>SlowPasteBytesPerCall</key>
+	<integer>10</integer>
+	<key>SlowPasteDelayBetweenCalls</key>
+	<real>0.18939393758773804</real>
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -2850,6 +2896,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1502386432</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -2870,10 +2918,12 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.1.5.beta.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
