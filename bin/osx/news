@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-open http://digg.com/reader/folder/favorites
+open https://feedly.com/i/category/favorites
