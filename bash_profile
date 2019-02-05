@@ -37,6 +37,8 @@ export ENV=$HOME/.bashrc
 #Set up command history.
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+#Leave commands that start with space out of history.
+export HISTCONTROL=ignorespace
 #Make shells write to history immediately instead of on exit.
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
