@@ -54,6 +54,7 @@ alias l='ls -alF'
 alias latest_download='latest ~/Downloads'
 alias latest_screenshot='latest ~/Pictures/Screenshots'
 alias please=sudo
+alias s=search
 alias serve_this_dir='python -m SimpleHTTPServer'
 alias tree="tree -I 'node_modules|tmp'"
 
