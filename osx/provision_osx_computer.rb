@@ -179,7 +179,6 @@ gridwars
 handbrake
 hedgewars
 hipchat
-horndis
 iterm2
 java
 jumpcut
