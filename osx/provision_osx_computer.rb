@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require "fileutils"
+
 def parse_package_list(string)
   lines = string.split("\n")
   active_packages = lines.reject{|package| package =~ /\A\s*\#/}
@@ -252,16 +254,9 @@ cask_packages.each do |package|
   run "brew cask install #{package}"
 end
 
-# Link .app files to /Applications.
-run "brew linkapps"
-
 # Clean up Homebrew cache.
 run "brew cleanup"
-run "brew prune"
 run "brew cask cleanup"
 
 # Eliminate useless fading animation on iTerm2 hotkey window.
 run "defaults write com.googlecode.iterm2 HotkeyTermAnimationDuration -float 0.00001"
-
-# Set up go language.
-mkdir "~/go"
