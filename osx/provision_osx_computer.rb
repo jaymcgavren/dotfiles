@@ -238,10 +238,6 @@ run "ln -s ~/dotfiles/rp5rc ~/.rp5rc"
 run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
 
-# Add additional Homebrew sources.
-run "brew tap homebrew/dupes"
-run "brew tap homebrew/games"
-
 # Set up Cask.
 run "brew install caskroom/cask/brew-cask"
 
