@@ -32,10 +32,6 @@ export PATH=${PATH}:${HOME}/go/bin
 #   export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
 # fi
 
-
-export RUBYLIB=${HOME}/ruby/lib:${RUBYLIB}
-export RUBYLIB=${HOME}/dotfiles/ruby/lib:${RUBYLIB}
-
 #Create files as read-only by group and world.
 umask 022
 
