@@ -2,16 +2,9 @@
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 #Path setup.
-export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/sbin
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=${PATH}:/usr/local/mysql/bin
-export PATH=${PATH}:/usr/local/Cellar/python
-export PATH=${PATH}:/usr/local/share/npm/bin
-export PATH=${PATH}:${HOME}/Applications/jruby-1.6.4/bin
-export PATH=${HOME}/Shortcuts:${PATH}
+export PATH=/usr/local/sbin:$PATH
 export PATH=${HOME}/dotfiles/bin:${PATH}
-export PATH=$PATH:${HOME}/Applications/android-sdk/tools
+
 # Replace OSX core utilities with GNU versions.
 if [[ $OSTYPE == *darwin* ]]; then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -20,7 +13,6 @@ fi
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/osx:${PATH}
-  export PATH=$PATH:/Applications/dart/dart-sdk/bin
 elif [[ $OSTYPE == *linux* ]]; then
   export PATH=${HOME}/dotfiles/bin/linux:${PATH}
   export PATH=${HOME}/dotfiles_local/bin/linux:${PATH}
