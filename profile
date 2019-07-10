@@ -7,8 +7,17 @@ export PATH=${HOME}/dotfiles/bin:${PATH}
 
 # Replace OSX core utilities with GNU versions.
 if [[ $OSTYPE == *darwin* ]]; then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+  export PATH="$(brew --prefix ed)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-indent)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-which)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnutls)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix grep)/libexec/gnubin:$PATH"
+  export PATH="$(brew --prefix gnu-indent)/libexec/gnubin:$PATH"
 fi
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH=${HOME}/dotfiles/bin/osx:${PATH}

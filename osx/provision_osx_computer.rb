@@ -26,18 +26,18 @@ cliclick # Script mouse clicks
 cmake
 cmatrix
 composer
-coreutils --default-names
+coreutils
 cowsay
 ctags
 curl
 diffutils
 dos2unix
-ed --default-names
+ed
 emacs
 faac
 fceux
 ffmpeg
-findutils --default-names
+findutils
 flac
 fontconfig
 fortune
@@ -54,13 +54,13 @@ git-extras
 git-flow
 glib
 gmp
-gnu-indent --default-names
-gnu-sed --default-names
-gnu-tar --default-names
-gnu-which --default-names
-gnutls --default-names
+gnu-indent
+gnu-sed
+gnu-tar
+gnu-which
+gnutls
 go
-grep --default-names
+grep
 gtk+
 gzip
 harfbuzz
