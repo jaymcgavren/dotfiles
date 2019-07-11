@@ -26,7 +26,7 @@
 	untracked = cyan
 [core]
 	excludesfile = /Users/jay/dotfiles/gitexcludes
-	editor = edit -w
+	editor = mg
 [http]
 [push]
 	default = current
