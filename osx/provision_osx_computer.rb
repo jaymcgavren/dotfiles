@@ -209,6 +209,7 @@ sketchup
 skype
 slate
 # soundflower
+spotify
 steam
 stella
 sublime-text
