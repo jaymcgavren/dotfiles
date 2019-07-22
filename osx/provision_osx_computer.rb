@@ -106,6 +106,7 @@ openssh --with-brewed-openssl
 openssl
 ossp-uuid
 p11-kit
+pandoc
 pango
 pcre
 phantomjs
