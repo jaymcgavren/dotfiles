@@ -197,6 +197,7 @@ openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
 picasa
 # postgres
 # prezi
+postman # GUI for sending API requests.
 processing
 rescuetime
 rrootage
