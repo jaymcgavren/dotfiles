@@ -188,7 +188,7 @@ jumpcut
 kid3
 libreoffice
 mame
-menumeters # No recipe available.
+menumeters
 minecraft
 nethackcocoa
 noiz2sa
