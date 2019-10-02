@@ -198,6 +198,7 @@ picasa
 # postgres
 # prezi
 postman # GUI for sending API requests.
+powder # The Powder Toy - a fun sandbox app.
 processing
 rescuetime
 rrootage
