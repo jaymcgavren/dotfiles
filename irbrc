@@ -18,6 +18,12 @@ def history
   puts Readline::HISTORY.entries.last(50).join("\n")
 end
 
+def pbcopy(string)
+  command = RUBY_PLATFORM =~ /darwin/ ? "pbcopy" : "xclip"
+  IO.popen(command, "w") { |pipe| pipe.puts string }
+  string
+end
+
 class Object
   def interesting_methods
     case self.class
