@@ -3,6 +3,7 @@
 	st = status -sb
 	mylog = log --pretty=format:'%h %s [%an]' --graph
 	grp = grep --break --heading --line-number
+	this-branch = rev-parse --abbrev-ref HEAD
 [gui]
 	recentrepo = C:/work/git_test
 [color]
