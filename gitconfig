@@ -4,6 +4,7 @@
 	mylog = log --pretty=format:'%h %s [%an]' --graph
 	grp = grep --break --heading --line-number
 	shove = push --force-with-lease
+	prdiff = !git diff master...$(git rev-parse --abbrev-ref HEAD)
 	this-branch = rev-parse --abbrev-ref HEAD
 [gui]
 	recentrepo = C:/work/git_test
