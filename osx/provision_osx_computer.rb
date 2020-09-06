@@ -111,7 +111,6 @@ ossp-uuid
 p11-kit
 pandoc
 pango
-pcre
 phantomjs
 php55
 php55-mcrypt
@@ -262,7 +261,6 @@ run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
 
 # Set up required libraries.
-run "brew link pcre"
 run "brew cask install xquartz"
 
 # Install configured packages.
