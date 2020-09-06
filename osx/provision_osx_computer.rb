@@ -101,7 +101,6 @@ netcat
 nettle
 node
 nodenv
-open-tyrian # Shoot-em-up game
 openssh --with-brewed-openssl
 openssl
 ossp-uuid
@@ -135,7 +134,6 @@ sdl2_mixer # For game development
 sox
 sqlite
 subversion
-supertux --devel
 svn
 terminal-notifier # Alerts to OSX Notification Center via terminal.
 the_silver_searcher
