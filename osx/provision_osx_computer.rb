@@ -261,9 +261,6 @@ run "ln -s ~/dotfiles/rp5rc ~/.rp5rc"
 run "ln -s ~/dotfiles/slate ~/.slate"
 run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
 
-# Set up Cask.
-run "brew install caskroom/cask/brew-cask"
-
 # Set up required libraries.
 run "brew link pcre"
 run "brew cask install xquartz"
