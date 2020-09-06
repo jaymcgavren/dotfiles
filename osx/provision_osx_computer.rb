@@ -231,7 +231,7 @@ stella
 teeworlds
 unity-web-player
 wesnoth
-end
+EOD
 
 cask_packages = cask_applications + cask_games
 
