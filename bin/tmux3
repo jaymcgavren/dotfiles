@@ -1,2 +1,2 @@
 #!/bin/sh
-tmux new-session "emacs ." \; split-window -h \; split-window -v \; attach
+tmux new-session \; split-window -h \; split-window -v \; attach
