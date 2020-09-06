@@ -159,16 +159,28 @@ zsh
 EOD
 
 cask_applications = parse_package_list(<<-EOD)
+1password
+1password-cli
 amazon-music
+android-file-transfer
+android-ndk
+android-platform-tools
+android-sdk
+android-studio
 anki
+# atom
+authy
 bettertouchtool
+discord
 docker
 dropbox
 emacs
 firefox
 gimp
 gitx
+google-backup-and-sync
 google-chrome
+google-drive-file-stream
 handbrake
 hipchat
 iterm2
@@ -183,9 +195,10 @@ picasa
 postman # GUI for sending API requests.
 # prezi
 processing
-# rescuetime
+rescuetime
 screenflow
 screenhero
+scrivener
 sequel-pro
 shoes
 sketchup
@@ -199,10 +212,13 @@ sublime-text
 # transmit
 vagrant
 virtualbox
+visual-studio
+visual-studio-code
 vlc
 wireshark
 xaos
 xscreensaver
+zoomus # Zoom.us video chat client
 EOD
 
 cask_games = parse_package_list(<<-EOD)
