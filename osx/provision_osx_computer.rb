@@ -11,6 +11,7 @@ end
 
 brew_packages = parse_package_list(<<-EOD)
 ack
+ant
 aspell
 atk
 autoconf
@@ -64,10 +65,12 @@ grep
 gtk+
 gzip
 harfbuzz
+htop
 icu4c
 imagemagick
 jasper
 jpeg
+jq
 lame
 less
 libao
@@ -91,6 +94,7 @@ lynx
 lzip
 mad
 markdown
+mas
 mcrypt
 memcached
 mg
@@ -137,6 +141,7 @@ subversion
 svn
 terminal-notifier # Alerts to OSX Notification Center via terminal.
 the_silver_searcher
+tldr
 tmux
 todo-txt
 tree
