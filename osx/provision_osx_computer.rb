@@ -160,75 +160,80 @@ zlib
 zsh
 EOD
 
-cask_packages = parse_package_list(<<-EOD)
+cask_applications = parse_package_list(<<-EOD)
 amazon-music
 anki
 bettertouchtool
-celestia
-desmume # Nintendo DS emulator
 docker
-dolphin # Nintendo GameCube/Wii emulator
-dosbox
 dropbox
-# dwarf-fortress
-electric-sheep
 emacs
 firefox
-# freeciv
 gimp
 gitx
 google-chrome
-gridwars
 handbrake
-hedgewars
 hipchat
 iterm2
 java
 jumpcut
 kid3
 libreoffice
-mame
 menumeters
-minecraft
-nethackcocoa
-noiz2sa
 omnidazzle
-openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
 picasa
 # postgres
-# prezi
 postman # GUI for sending API requests.
-powder # The Powder Toy - a fun sandbox app.
+# prezi
 processing
-rescuetime
-rrootage
-# sauerbraten
+# rescuetime
 screenflow
 screenhero
-scummvm
 sequel-pro
 shoes
 sketchup
 skype
 slate
-# soundflower
 spotify
-steam
-stella
+# soundflower
 sublime-text
-teeworlds
 # torbrowser
 # tower
 # transmit
-unity-web-player
 vagrant
 virtualbox
 vlc
-wesnoth
 wireshark
 xaos
 xscreensaver
 EOD
+
+cask_games = parse_package_list(<<-EOD)
+celestia
+desmume # Nintendo DS emulator
+dolphin # Nintendo GameCube/Wii emulator
+dosbox
+dwarf-fortress
+electric-sheep
+# freeciv
+gridwars
+hedgewars
+mame
+minecraft
+nethackcocoa
+noiz2sa
+openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
+powder # The Powder Toy - a fun sandbox app.
+rrootage
+# sauerbraten
+scummvm
+steam
+stella
+teeworlds
+unity-web-player
+wesnoth
+end
+
+cask_packages = cask_applications + cask_games
 
 def run(command)
   puts `#{command} 2>&1`
