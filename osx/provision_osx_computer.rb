@@ -222,29 +222,21 @@ zoomus # Zoom.us video chat client
 EOD
 
 cask_games = parse_package_list(<<-EOD)
-celestia
+adventure
 desmume # Nintendo DS emulator
 dolphin # Nintendo GameCube/Wii emulator
 dosbox
 dwarf-fortress
 electric-sheep
 # freeciv
-gridwars
-hedgewars
 mame
 minecraft
 nethackcocoa
-noiz2sa
 openemu # Multi-console emulator, including NES, SNES, Genesis, etc.
 powder # The Powder Toy - a fun sandbox app.
-rrootage
-# sauerbraten
 scummvm
 steam
 stella
-teeworlds
-unity-web-player
-wesnoth
 EOD
 
 cask_packages = cask_applications + cask_games
