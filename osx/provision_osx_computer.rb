@@ -192,6 +192,7 @@ iterm2
 java
 jumpcut
 kid3
+kindle
 libreoffice
 menumeters
 omnidazzle
@@ -208,6 +209,7 @@ sequel-pro
 shoes
 sketchup
 skype
+slack
 slate
 spotify
 # soundflower
