@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if [ $# -eq 0 ]
+then
+    open https://contacts.google.com/
+else
+    open https://contacts.google.com/search/$(echo $@ | sed 's/\ /+/g')
+fi
