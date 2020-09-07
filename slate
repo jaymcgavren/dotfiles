@@ -37,6 +37,7 @@ alias leftless      move screenOriginX;screenOriginY                  screenSize
 alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-main}
 alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-main}
 alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-main}
+alias 2-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY         ${mon-secondary}
 alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY         ${mon-secondary}
 alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-secondary}
 alias 2-righttop    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2       ${mon-secondary}
