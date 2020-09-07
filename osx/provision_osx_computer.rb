@@ -180,6 +180,7 @@ docker
 dropbox
 emacs
 firefox
+fluid
 gimp
 gitx
 google-backup-and-sync
