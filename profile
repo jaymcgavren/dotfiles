@@ -5,6 +5,8 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 export PATH=/usr/local/sbin:$PATH
 export PATH=${HOME}/dotfiles/bin:${PATH}
 
+source `brew --prefix`/share/gem_home/gem_home.sh
+
 # Replace OSX core utilities with GNU versions.
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
