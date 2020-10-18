@@ -21,7 +21,7 @@ alias mon-main 0
 alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
-alias editor 'Sublime Text'
+alias editor 'Code'
 alias terminal 'iTerm2'
 alias typesetting 'InDesign'
 
