@@ -134,8 +134,17 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSUserKeyEquivalents</key>
+	<dict>
+		<key>Reset</key>
+		<string>@~^$r</string>
+		<key>Split Horizontally with Current Profile</key>
+		<string>@~^</string>
+		<key>Split Vertically with Current Profile</key>
+		<string>@~^$</string>
+	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>315 48 937 514 0 0 1920 1057 </string>
+	<string>305 194 918 512 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 653 1920 404 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
