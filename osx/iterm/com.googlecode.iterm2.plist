@@ -645,7 +645,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use libtickit protocol</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
