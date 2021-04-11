@@ -91,7 +91,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/logs</string>
+	<string>~/Downloads</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -2651,6 +2651,11 @@
 	<false/>
 	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
 	<true/>
+	<key>NoSyncSavePanelSavedSettings_StartSessionLog</key>
+	<dict>
+		<key>Initial Directory</key>
+		<string>/Users/jay/Downloads</string>
+	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>584252419.85098505</real>
 	<key>OnlyWhenMoreTabs</key>
