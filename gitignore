@@ -4,6 +4,7 @@
 .ant/lib
 .bash_history
 .cheat
+.dir-locals.el
 .eclipse
 .fontconfig
 .gem
