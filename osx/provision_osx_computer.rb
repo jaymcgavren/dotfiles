@@ -69,6 +69,7 @@ htop
 icu4c
 imagemagick
 jasper
+java
 jpeg
 jq
 lame
@@ -189,7 +190,6 @@ google-drive-file-stream
 handbrake
 hipchat
 iterm2
-java
 jumpcut
 kid3
 kindle
