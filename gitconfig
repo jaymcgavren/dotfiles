@@ -6,6 +6,7 @@
 	shove = push --force-with-lease
 	prdiff = !git diff main...$(git rev-parse --abbrev-ref HEAD)
 	this-branch = rev-parse --abbrev-ref HEAD
+	branch-move = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
 [gui]
 	recentrepo = C:/work/git_test
 [color]
