@@ -4,6 +4,7 @@ if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 #Path setup.
 export PATH=/usr/local/sbin:$PATH
 export PATH=${HOME}/dotfiles/bin:${PATH}
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
 source `brew --prefix`/share/gem_home/gem_home.sh
 
