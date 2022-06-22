@@ -47,6 +47,7 @@ brew "dnsmasq"
 brew "docker", link: false
 brew "dos2unix"
 brew "ed", link: true
+brew "findutils"
 brew "gmp"
 brew "libtool"
 brew "libevent"
