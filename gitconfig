@@ -40,3 +40,5 @@
 [grep]
 	extendRegexp = true
 	lineNumber = true
+[init]
+	defaultBranch = main
