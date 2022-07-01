@@ -49,10 +49,12 @@ umask 022
 setopt interactivecomments
 
 # History setup.
-setopt HIST_IGNORE_SPACE
-setopt EXTENDED_HISTORY
-export HISTSIZE=100000
-export SAVEHIST=$HISTSIZE
+setopt HIST_IGNORE_SPACE # Don't save commands that begin with a space character.
+setopt EXTENDED_HISTORY # Save timestamps with each command.
+setopt SHARE_HISTORY # Multiple zsh instances will sync their histories.
+export HISTFILE=$HOME/.zsh_history # File to save/load history to/from.
+export HISTSIZE=100000 # Number of commands to track.
+export SAVEHIST=$HISTSIZE # Number of commands to save
 
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
