@@ -43,10 +43,12 @@ fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
 export PATH=${PATH}:${HOME}/go/bin
 
-#Create files as read-only by group and world.
-umask 022
+umask 022 #Create files as read-only by group and world.
 
-setopt interactivecomments
+setopt INTERACTIVE_COMMENTS # Allow # following typed commands.
+setopt NO_CLOBBER # Prevent > from overwriting existing files.
+
+
 
 # History setup.
 setopt HIST_IGNORE_SPACE # Don't save commands that begin with a space character.
