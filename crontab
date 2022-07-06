@@ -12,3 +12,7 @@ PATH=$HOME/dotfiles_local/bin:$HOME/dotfiles/bin:/usr/local/opt/coreutils/libexe
 
 # Email a report of largest files at 3 AM on the 1st of each month.
 0 3 1 * * du -Sh / | sort -rh | head -n 100 | mail -s 'Large directory report' jay@mcgavren.com
+
+# Back up history files nightly.
+0 5 * * * cp ${HOME}/.zsh_history /Volumes/GoogleDrive/My\ Drive/shell/.zsh_history
+0 5 * * * cp ${HOME}/.local/share/pry/pry_history /Volumes/GoogleDrive/My\ Drive/shell/.pry_history
