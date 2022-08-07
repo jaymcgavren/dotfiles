@@ -48,8 +48,6 @@ umask 022 #Create files as read-only by group and world.
 setopt INTERACTIVE_COMMENTS # Allow # following typed commands.
 setopt NO_CLOBBER # Prevent > from overwriting existing files.
 
-
-
 # History setup.
 setopt HIST_IGNORE_SPACE # Don't save commands that begin with a space character.
 setopt EXTENDED_HISTORY # Save timestamps with each command.
@@ -57,6 +55,15 @@ setopt SHARE_HISTORY # Multiple zsh instances will sync their histories.
 export HISTFILE=$HOME/.zsh_history # File to save/load history to/from.
 export HISTSIZE=100000 # Number of commands to track.
 export SAVEHIST=$HISTSIZE # Number of commands to save
+
+#Set up text editing/viewing.
+export LANG=en_US.utf-8
+export CLICOLOR=1 #Colorizes output of ls and others.
+export EDITOR=mg
+export VISUAL=$EDITOR
+export PAGER=less
+export LESS='-R-i-P%f (%i/%m) Line %lt/%L' #ANSI color, better prompt, case-insensitive search.
+export LS_COLORS=$LS_COLORS:'di=1;44:'
 
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
