@@ -70,6 +70,16 @@ function git_recent()
   git checkout $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' --color | head -n 8 | fzf --height 20%)
 }
 
+function mkcd {
+    if [ ! -n "$1" ]; then
+        echo "Enter a directory name"
+    elif [ -d $1 ]; then
+        echo "\`$1' already exists"
+    else
+        mkdir $1 && cd $1
+    fi
+}
+
 function toss {
   for filename; do
     if [ -e $HOME/.Trash/$filename ]; then
