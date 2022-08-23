@@ -70,6 +70,16 @@ function git_recent()
   git checkout $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' --color | head -n 8 | fzf --height 20%)
 }
 
+function toss {
+  for filename; do
+    if [ -e $HOME/.Trash/$filename ]; then
+      mv "${filename}" "${HOME}/.Trash/${filename}$(date +%Y%m%d%H%M%S)"
+    else
+      mv "${filename}" "${HOME}/.Trash/${filename}"
+    fi
+  done
+}
+
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
   . $HOME/dotfiles_local/zshrc
