@@ -1,6 +1,4 @@
 .DS_Store
 log/*
-spec/fixtures/*
-test/fixtures/*
 tmp/*
 temp.txt
