@@ -1,10 +1,4 @@
 .DS_Store
-config/database.yml
-coverage.data
-coverage/*
-db/*.sqlite3
-db/schema.rb
-host_specific/*
 log/*
 spec/fixtures/*
 test/fixtures/*
