@@ -30,7 +30,6 @@ elif [[ $OSTYPE == *linux* ]]; then
   export PATH=${HOME}/dotfiles_local/bin/linux:${PATH}
 fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
-export PATH=${PATH}:${HOME}/go/bin
 
 # if [[ $OSTYPE == *darwin* ]]; then
 #   export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem

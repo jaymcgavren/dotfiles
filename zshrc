@@ -41,7 +41,6 @@ elif [[ $OSTYPE == *linux* ]]; then
   export PATH=${HOME}/dotfiles_local/bin/linux:${PATH}
 fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
-export PATH=${PATH}:${HOME}/go/bin
 
 umask 022 #Create files as read-only by group and world.
 
