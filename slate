@@ -21,11 +21,14 @@ alias mon-main 0
 alias showHintsLeftHand hint AOEUIYQJKX
 alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
 alias browser 'Google Chrome'
+alias calendar 'Google Calendar'
 alias editor 'Code'
+alias email 'Gmail'
 alias terminal 'iTerm2'
 alias typesetting 'InDesign'
 alias gameDesigner 'Unity'
 alias chat 'Slack'
+alias tickets 'Jira Audience'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -120,8 +123,10 @@ alias slatekey ctrl
 # bind down:${slatekey}     focus down
 
 # App bindings
+bind 3:${slatekey} focus ${email}
+bind 4:${slatekey} focus ${calendar}
 bind 5:${slatekey} focus ${chat}
-bind 6:${slatekey} focus ${gameDesigner}
+bind 6:${slatekey} focus ${tickets}
 bind 7:${slatekey} focus ${terminal}
 bind 8:${slatekey} focus ${editor}
 bind 9:${slatekey} focus ${browser}
