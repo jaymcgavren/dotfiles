@@ -1,6 +1,7 @@
 HOME=/Users/jay
 SHELL=/bin/bash
 PATH=$HOME/dotfiles_local/bin:$HOME/dotfiles/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin
+GOOGLE_DRIVE="$HOME/Google Drive/My Drive"
 
 # 10 04 * * 1,2,3,4,5 /Users/jay/dotfiles/bin/add_files "/Users/jay/Music/iTunes/iTunes Music/" "jay@media:/media/Backup/media/"
 # 10 03 * * 1,2,3,4,5 /Users/jay/dotfiles/bin/add_files "/Users/jay/Documents/content/" "jay@media:/media/Backup/content/"
@@ -14,5 +15,5 @@ PATH=$HOME/dotfiles_local/bin:$HOME/dotfiles/bin:/opt/homebrew/opt/coreutils/lib
 0 3 1 * * du -Sh / 2>&1 | sort -rh | head -n 100 | mail -s 'Large directory report' jay@mcgavren.com
 
 # Back up history files nightly.
-0 5 * * * cp ${HOME}/.zsh_history /Volumes/GoogleDrive/My\ Drive/shell/.zsh_history
-0 5 * * * cp ${HOME}/.local/share/pry/pry_history /Volumes/GoogleDrive/My\ Drive/shell/.pry_history
+0 5 * * * cp ${HOME}/.zsh_history "$GOOGLE_DRIVE/shell/.zsh_history"
+0 5 * * * cp ${HOME}/.local/share/pry/pry_history "$GOOGLE_DRIVE/shell/.pry_history"
