@@ -12,7 +12,7 @@ GOOGLE_DRIVE="$HOME/Google Drive/My Drive"
 # 30 07 * * MON-THU do_work
 
 # Email a report of largest files at 3 AM on the 1st of each month.
-0 3 1 * * du -Sh / 2>&1 | sort -rh | head -n 100 | mail -s 'Large directory report' jay@mcgavren.com
+0 3 1 * * du -h ${HOME} 2>&1 | sort -rh | head -n 100 | mail -s 'Large directory report' jay@mcgavren.com
 
 # Back up history files nightly.
 0 5 * * * cp ${HOME}/.zsh_history "$GOOGLE_DRIVE/shell/.zsh_history"
