@@ -111,6 +111,11 @@ alias slatekey ctrl
 # bind n:${slatekey} ${full}
 # bind s:${slatekey} ${righthalf}
 # bind r:${slatekey} throw next
+# Using concrete positions because abstract ones don't seem to work
+bind left:${slatekey} ${2-left}
+bind up:${slatekey} ${2-full}
+bind right:${slatekey} ${2-right}
+
 
 # Resize Bindings
 #bind r:${slatekey} ${leftmost}
