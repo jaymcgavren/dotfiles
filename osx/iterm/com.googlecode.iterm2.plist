@@ -1513,12 +1513,18 @@
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Activated By Modifier</key>
+			<false/>
+			<key>HotKey Alternate Shortcuts</key>
+			<array/>
 			<key>HotKey Characters</key>
 			<string> </string>
 			<key>HotKey Characters Ignoring Modifiers</key>
 			<string> </string>
 			<key>HotKey Key Code</key>
 			<integer>49</integer>
+			<key>HotKey Modifier Activation</key>
+			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
 			<integer>524288</integer>
 			<key>HotKey Window Animates</key>
