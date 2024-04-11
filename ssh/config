@@ -23,3 +23,9 @@ Host retropie
     User pi
 Host steamdeck
     User deck
+
+# Set default user name to use when connecting to other machines.
+# Note that in ssh config it seems to be important that the * entry come last,
+# or it will take precedence over any host-specific configs you later make.
+Host *
+    User jay
