@@ -1,1 +1,19 @@
 ForwardX11 no
+
+# Use a particular private key with GitHub SSH.
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/github_ed25519
+    User git
+
+# Fake alias that uses a different SSH private key.
+# Allows you to use a different GitHub account for a particular repo.
+# To use it, copy the SSH clone URL for a GitHub repo, and revise the hostname, e.g.:
+# git clone git@github.com:jaymcgavren/dotfiles.git
+# becomes
+# git clone git@jaymcgavren-github.com:jaymcgavren/dotfiles.git
+Host jaymcgavren-github.com
+    HostName github.com
+    IdentityFile ~/.ssh/other_ed25519
+    User git
+
