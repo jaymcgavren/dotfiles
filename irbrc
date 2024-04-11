@@ -14,6 +14,9 @@ end
 IRB.conf[:SAVE_HISTORY] = 10000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
+# Disable annoying Reline autocomplete.
+IRB.conf[:USE_AUTOCOMPLETE] = false
+
 def history
   puts Readline::HISTORY.entries.last(50).join("\n")
 end
