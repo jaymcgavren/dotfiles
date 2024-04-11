@@ -17,3 +17,9 @@ Host jaymcgavren-github.com
     IdentityFile ~/.ssh/other_ed25519
     User git
 
+# Use alternate user names on specific hosts.
+# These hostnames will need /etc/hosts entries to work.
+Host retropie
+    User pi
+Host steamdeck
+    User deck
