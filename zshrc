@@ -15,10 +15,12 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 #Path setup.
 export PATH=${HOME}/dotfiles/bin:${PATH}
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
 source `brew --prefix`/share/gem_home/gem_home.sh
 
+if [[ $OSTYPE == *darwin* ]]; then
+  export PATH="$(brew --prefix)/bin:$PATH"
+fi
 # Replace OSX core utilities with GNU versions.
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
