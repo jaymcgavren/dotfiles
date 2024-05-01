@@ -7,23 +7,13 @@ h1. Installation
 
 Most users will want to simply borrow the snippets they find interesting or useful.  But if you want to use the entire environment as is, you can do so by sourcing it from your own shell configuration...
 
-Drop the dotfiles folder in your home directory.  Then add lines like this to your ~/.bash_profile:
+Copy the dotfiles folder into your home directory.  Then create symlinks so the repo contents are used in place of your config files, like so:
 
 <pre>
-  if [ -f ~/dotfiles/bash_profile ]; then
-      . ~/dotfiles/bash_profile
-  fi
+ln -s ${HOME}/dotfiles/zshrc .zshrc
 </pre>
 
-And in your ~/.bashrc:
-
-<pre>
-  if [ -f ~/dotfiles/bashrc ]; then
-      . ~/dotfiles/bashrc
-  fi
-</pre>
-
-The bash_profile and bashrc files should add all the scripts to your $PATH and do other environment setup.
+The `zshrc` file, in particular, should add all the scripts to your $PATH and do other environment setup when a new shell loads.
 
 
 h1. Directories
