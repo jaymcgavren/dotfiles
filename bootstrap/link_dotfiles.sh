@@ -1,16 +1,19 @@
 #!/bin/sh
 
+dotfiles_path=~/dotfiles
+
 # Link dotfiles to paths where they'll actually be accessed.
-run "ln -s ~/dotfiles/agignore ~/.agignore"
-run "ln -s ~/dotfiles/gitconfig ~/.gitconfig"
-run "ln -s ~/dotfiles/gitignore ~/.gitignore"
-run "ln -s ~/dotfiles/inputrc ~/.inputrc"
-run "ln -s ~/dotfiles/gitconfig ~/.gitconfig"
-run "ln -s ~/dotfiles/gitignore ~/.gitignore"
-run "ln -s ~/dotfiles/irbrc ~/.irbrc"
-run "ln -s ~/dotfiles/pryrc ~/.pryrc"
-run "ln -s ~/dotfiles/rp5rc ~/.rp5rc"
-run "ln -s ~/dotfiles/slate ~/.slate"
-run "ln -s ~/dotfiles/tmux.conf ~/.tmux.conf"
-run "ln -s ~/dotfiles/zprofile ~/.zprofile"
-run "ln -s ~/dotfiles/zshrc ~/.zshrc"
+ln -s ${dotfiles_path}/agignore ~/.agignore
+ln -s ${dotfiles_path}/gitconfig ~/.gitconfig
+ln -s ${dotfiles_path}/gitignore ~/.gitignore
+ln -s ${dotfiles_path}/inputrc ~/.inputrc
+ln -s ${dotfiles_path}/gitconfig ~/.gitconfig
+ln -s ${dotfiles_path}/gitignore ~/.gitignore
+ln -s ${dotfiles_path}/irbrc ~/.irbrc
+ln -s ${dotfiles_path}/pryrc ~/.pryrc
+ln -s ${dotfiles_path}/rp5rc ~/.rp5rc
+ln -s ${dotfiles_path}/slate ~/.slate
+ln -s ${dotfiles_path}/tmux.conf ~/.tmux.conf
+ln -s ${dotfiles_path}/zprofile ~/.zprofile
+ln -s ${dotfiles_path}/zshrc ~/.zshrc
+ln -s ${dotfiles_path}/todo-txt-sh/todo.cfg ~/.todo.cfg
