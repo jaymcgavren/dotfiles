@@ -1,0 +1,15 @@
+alias amazon=search_amazon
+alias dl='downloads'
+alias dotfiles='emacs $HOME/dotfiles'
+alias dotfiles_local='emacs $HOME/dotfiles_local'
+alias dtcb='date_time | cb'
+alias emoj=emojify
+alias em=email
+alias fd=finder
+alias we=work_email
+alias s=search
+alias t=todo.sh
+alias tb='todo.sh -d $HOME/dotfiles/todo-txt-sh/todo_book.cfg'
+alias tw='todo.sh -d $HOME/dotfiles/todo-txt-sh/todo_work.cfg'
+alias w=web
+alias wch=work_chat
