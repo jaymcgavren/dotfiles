@@ -66,6 +66,14 @@ export PAGER=less
 export LESS='-R-i-P%f (%i/%m) Line %lt/%L' #ANSI color, better prompt, case-insensitive search.
 export LS_COLORS=$LS_COLORS:'di=1;44:'
 
+# Display Git branch in prompt.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+precmd() { vcs_info }
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%b'
+export PROMPT='%n@%m %1~ *${vcs_info_msg_0_}'$'\n'$'%# '
+
 function git_recent()
 {
   git checkout $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' --color | head -n 8 | fzf --height 20%)
