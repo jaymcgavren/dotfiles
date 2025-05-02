@@ -1,0 +1,161 @@
+#!/usr/bin/env ruby
+
+require 'net/http'
+require 'uri'
+require 'json'
+require 'base64'
+
+# === CONFIGURATION ===
+LOCAL_PORT=4567
+REQUEST_INTERVAL = 1.0 # seconds
+WAIT_INTERVAL = 1.0 # seconds
+REDIRECT_URI = "http://127.0.0.1:#{LOCAL_PORT}/"
+# Retrieve at https://developer.spotify.com/dashboard/applications
+CLIENT_ID = ENV["SPOTIFY_CLIENT_ID"]
+CLIENT_SECRET = ENV["SPOTIFY_CLIENT_SECRET"]
+
+require 'base64'
+require 'cgi'
+require 'json'
+require 'net/http'
+require 'uri'
+require 'webrick'
+
+def authorize_url
+  params = {
+    client_id: CLIENT_ID,
+    response_type: 'code',
+    redirect_uri: REDIRECT_URI,
+    scope: 'playlist-read-private playlist-read-collaborative',
+    show_dialog: true
+  }
+  require 'pry'; binding.pry
+  "https://accounts.spotify.com/authorize?" + URI.encode_www_form(params)
+end
+
+# Spotify insists on presenting an authorization page to the user.
+# When confirmed, it redirects to a URL with a code.
+def get_authorization_code
+  server = WEBrick::HTTPServer.new(Port: 4567)
+  server.mount_proc '/' do |request, response|
+    $authorization_code = request.query['code']
+    response.body = "OK"
+  end
+  trap('INT') { server.shutdown }
+  server.start
+  # until $authorization_code
+  #   sleep WAIT_INTERVAL
+  # end
+end
+
+def get_tokens(authorization_code)
+  uri = URI('https://accounts.spotify.com/api/token')
+  req = Net::HTTP::Post.new(uri)
+  req.basic_auth(CLIENT_ID, CLIENT_SECRET)
+  req.set_form_data(
+    grant_type: 'authorization_code',
+    code: authorization_code,
+    redirect_uri: REDIRECT_URI
+  )
+  res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+  raise "Failed to get tokens: #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+  JSON.parse(res.body)
+end
+
+def refresh_access_token(refresh_token)
+  uri = URI('https://accounts.spotify.com/api/token')
+  req = Net::HTTP::Post.new(uri)
+  req.basic_auth(CLIENT_ID, CLIENT_SECRET)
+  req.set_form_data(
+    grant_type: 'refresh_token',
+    refresh_token: refresh_token
+  )
+  res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+  raise "Failed to refresh token: #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+  JSON.parse(res.body)
+end
+
+def get_current_user_id(access_token)
+  uri = URI('https://api.spotify.com/v1/me')
+  req = Net::HTTP::Get.new(uri)
+  req['Authorization'] = "Bearer #{access_token}"
+  res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+  raise "Failed to get user: #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+  JSON.parse(res.body)['id']
+end
+
+def get_my_playlists(access_token)
+  playlists = []
+  offset = 0
+  limit = 50
+  loop do
+    uri = URI("https://api.spotify.com/v1/me/playlists?limit=#{limit}&offset=#{offset}")
+    req = Net::HTTP::Get.new(uri)
+    req['Authorization'] = "Bearer #{access_token}"
+    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+    raise "Failed to get playlists: #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+    data = JSON.parse(res.body)
+    playlists.concat(data['items'])
+    break if data['items'].size < limit
+    offset += limit
+  end
+  playlists
+end
+
+def get_playlist_tracks(playlist_id, access_token)
+  tracks = []
+  offset = 0
+  limit = 100
+  loop do
+    uri = URI("https://api.spotify.com/v1/playlists/#{playlist_id}/tracks?limit=#{limit}&offset=#{offset}")
+    req = Net::HTTP::Get.new(uri)
+    req['Authorization'] = "Bearer #{access_token}"
+    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) { |http| http.request(req) }
+    raise "Failed to get playlist tracks: #{res.body}" unless res.is_a?(Net::HTTPSuccess)
+    data = JSON.parse(res.body)
+    items = data['items']
+    break if items.empty?
+    tracks.concat(items)
+    offset += limit
+    break if items.size < limit
+  end
+  tracks
+end
+
+# === MAIN SCRIPT ===
+
+playlist_name = ARGV.shift
+unless playlist_name
+  puts "Usage: ruby #{$0} 'Playlist Name'"
+  exit 1
+end
+
+# Step 1: Get authorization code from user
+warn "Opening your browser to complete authorization. (Spotify makes apps do this.)"
+fail "Spotify always gives 'INVALID_CLIENT: Invalid redirect URI', even though I've verified it in the app setup. I don't know why and I'm out of time to debug this right now."
+`open '#{authorize_url}'`
+authorization_code = get_authorization_code
+
+# Step 2: Exchange code for tokens
+tokens = get_tokens(authorization_code)
+access_token = tokens['access_token']
+refresh_token = tokens['refresh_token']
+
+# Step 3: Get user's playlists and search for the playlist by name
+playlists = get_my_playlists(access_token)
+playlist = playlists.find { |pl| pl['name'].downcase == playlist_name.downcase }
+
+unless playlist
+  puts "Playlist not found in your account."
+  exit 1
+end
+
+# Step 4: Get tracks and print Artist\tTitle
+tracks = get_playlist_tracks(playlist['id'], access_token)
+tracks.each do |item|
+  track = item['track']
+  next unless track # skip if track is nil (sometimes happens)
+  artists = track['artists'].map { |a| a['name'] }.join(', ')
+  title = track['name']
+  puts "#{artists}\t#{title}"
+end
