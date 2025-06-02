@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'ruby', 'utility', 'lib'))
-require 'utility/storage'
-
-include Utility::Storage
-result = load(:storage)[ARGV.join(' ')] or fail "Could not load"
-print result
