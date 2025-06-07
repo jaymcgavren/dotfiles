@@ -9,6 +9,8 @@ export NVM_DIR="$HOME/.nvm"
 # nodenv setup.
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+source $HOME/dotfiles/aliases
+
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 #Path setup.
