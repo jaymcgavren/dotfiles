@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source $HOME/dotfiles/aliases
 
 # Keep this last so it can override general settings!

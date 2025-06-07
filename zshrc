@@ -1,5 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # rbenv (Ruby environment) setup.
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.rbenv/bin:$PATH"
