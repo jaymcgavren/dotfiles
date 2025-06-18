@@ -4,22 +4,14 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>5C6E4DED-D0D5-4554-9887-64D4B6DCEE4D</string>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>IRMemory</key>
+	<integer>4</integer>
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>New Bookmarks</key>
