@@ -2309,6 +2309,10 @@
 	</array>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SwitchTabModifier</key>
+	<integer>9</integer>
+	<key>SwitchWindowModifier</key>
+	<integer>9</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 </dict>
