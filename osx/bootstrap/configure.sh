@@ -11,4 +11,3 @@ killall Finder
 
 # Save screenshots to the Downloads folder.
 defaults write com.apple.screencapture location ~/Downloads
-
