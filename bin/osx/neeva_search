@@ -1,2 +1,0 @@
-#!/bin/bash
-open "https://neeva.com/search?q=$(echo $@ | sed 's/\ /+/g')"

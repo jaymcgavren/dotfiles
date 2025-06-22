@@ -29,7 +29,7 @@ alias typesetting 'InDesign'
 alias gameDesigner 'Unity'
 alias chat 'Slack'
 alias tickets 'Jira Audience'
-alias sms 'Beeper'
+alias sms 'Messages'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -131,11 +131,11 @@ bind right:${slatekey} ${2-right}
 # App bindings
 bind 3:${slatekey} focus ${email}
 bind 4:${slatekey} focus ${calendar}
-bind 5:${slatekey} focus ${chat}
+# bind 5:${slatekey} focus ${chat}
 bind 6:${slatekey} focus ${sms}
-bind 7:${slatekey} focus ${terminal}
-bind 8:${slatekey} focus ${editor}
-bind 9:${slatekey} focus ${browser}
+# bind 7:${slatekey} focus ${terminal}
+# bind 8:${slatekey} focus ${editor}
+# bind 9:${slatekey} focus ${browser}
 # bind 0:${slatekey} shell '/Users/jay/dotfiles_local/bin/osx/todo'
 
 # Disable OSX Cmd-Tab (to aid habituation):

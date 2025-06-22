@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-require 'rubygems'
-require 'rbosa'
-
-track = OSA.app('iTunes').current_track
-print "#{track.artist} - #{track.album} - #{sprintf('%02d', track.track_number)} #{track.name}"

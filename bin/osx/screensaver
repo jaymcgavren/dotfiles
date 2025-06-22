@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-open /System/Library/CoreServices/ScreenSaverEngine.app
-# Pre-Mojave
-# /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
