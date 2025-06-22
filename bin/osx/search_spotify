@@ -1,2 +1,0 @@
-#!/bin/bash
-open "https://open.spotify.com/search/$(echo $@ | sed 's/\ /%20/g')"

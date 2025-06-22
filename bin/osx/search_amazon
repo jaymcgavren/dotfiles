@@ -1,2 +1,0 @@
-#!/bin/bash
-open "http://www.amazon.com/s/ref=nb_ss?url=search-alias%3Daps&field-keywords=$(echo $@ | sed 's/\ /+/g')&x=0&y=0"

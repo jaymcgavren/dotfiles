@@ -1,2 +1,0 @@
-#!/bin/bash
-open http://froogle.google.com/froogle?q=$(echo $@ | sed 's/\ /+/g')&num=100
