@@ -1,5 +1,6 @@
 alias amazon=search_amazon
 alias be='bundle exec'
+alias cbj='clipboard_to_jpeg.sh'
 alias dl='downloads'
 alias dotfiles='emacs $HOME/dotfiles'
 alias dotfiles_local='emacs $HOME/dotfiles_local'
