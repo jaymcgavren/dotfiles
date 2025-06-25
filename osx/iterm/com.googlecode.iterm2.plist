@@ -2143,6 +2143,8 @@
 			<string>69455F97-ACD9-48B6-9BEC-2F12BAF46B99</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
