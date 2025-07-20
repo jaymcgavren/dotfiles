@@ -7,8 +7,6 @@ ln -s ${dotfiles_path}/agignore ~/.agignore
 ln -s ${dotfiles_path}/gitconfig ~/.gitconfig
 ln -s ${dotfiles_path}/gitignore ~/.gitignore
 ln -s ${dotfiles_path}/inputrc ~/.inputrc
-ln -s ${dotfiles_path}/gitconfig ~/.gitconfig
-ln -s ${dotfiles_path}/gitignore ~/.gitignore
 ln -s ${dotfiles_path}/irbrc ~/.irbrc
 ln -s ${dotfiles_path}/pryrc ~/.pryrc
 ln -s ${dotfiles_path}/rp5rc ~/.rp5rc
