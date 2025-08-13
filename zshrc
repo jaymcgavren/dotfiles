@@ -16,8 +16,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 #Path setup.
 export PATH=${HOME}/dotfiles/bin:${PATH}
 
-source `brew --prefix`/share/gem_home/gem_home.sh
-
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH="$(brew --prefix)/bin:$PATH"
 fi
