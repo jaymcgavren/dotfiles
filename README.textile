@@ -20,15 +20,11 @@ The `zshrc` file, in particular, should add all the scripts to your $PATH and do
 h1. Directories
 
 * /
-** "bash_profile" is equivalent to ~/.bash_profile, "irbrc" to "~/.irbrc", etc. Include these files from the originals in your home directory.
+** "bash_profile" is equivalent to ~/.bash_profile, "irbrc" to "~/.irbrc", etc.
 * bin/
 ** Contains scripts suitable for use in the bash shell on any Unix-like system.
 * bin/osx/
 ** These scripts are specific to Mac OS X.
-* ruby/lib/
-** Libraries suitable for referencing within irb or other scripts.  (They are not optimized for production use.)
-* ruby/spec/
-** Specs for the Ruby libraries.
 
 
 h1. Copyright
