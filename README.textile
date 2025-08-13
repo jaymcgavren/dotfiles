@@ -7,11 +7,12 @@ h1. Installation
 
 Most users will want to simply borrow the snippets they find interesting or useful. But if you want to use the entire environment as is, you can do so by sourcing it from your own shell configuration...
 
-Copy the dotfiles folder into your home directory. Then create symlinks so the repo contents are used in place of your config files, like so:
-
 <pre>
-ln -s ${HOME}/dotfiles/zshrc .zshrc
+git clone https://github.com/jaymcgavren/dotfiles.git ~/dotfiles
+~/dotfiles/bootstrap/link_dotfiles.sh
 </pre>
+
+This will copy the repo into your home directory and create symlinks so the repo contents are used in place of your config files. You may need to move the original config files out of the way first. (Keep backups!)
 
 The `zshrc` file, in particular, should add all the scripts to your $PATH and do other environment setup when a new shell loads.
 
