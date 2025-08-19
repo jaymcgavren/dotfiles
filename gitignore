@@ -16,6 +16,7 @@
 .lesshst
 .mysql_history
 .netbeans*
+.pry_history
 .qt
 .rmt
 .ruby_inline
