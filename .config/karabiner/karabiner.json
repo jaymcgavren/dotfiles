@@ -2,6 +2,21 @@
     "global": { "check_for_updates_on_startup": false },
     "profiles": [
         {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Push-to-talk",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "f8" },
+                                "to": [{ "shell_command": "osascript -e 'set volume input volume 70'" }],
+                                "to_after_key_up": [{ "shell_command": "osascript -e 'set volume input volume 0'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "name": "Default profile",
             "selected": true,
             "simple_modifications": [
