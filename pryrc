@@ -1,6 +1,12 @@
 # Note that this sets up SEPARATE files for each directory Pry is launched from!
 Pry.config.history_file = ".pry_history"
 
+if defined?(PryByebug)
+  Pry.commands.alias_command 'c', 'continue'
+  Pry.commands.alias_command 's', 'step'
+  Pry.commands.alias_command 'n', 'next'
+end
+
 Pry::Commands.block_command "pbcopy", "Copy a string to the clipboard" do |string|
   command = RUBY_PLATFORM =~ /darwin/ ? "pbcopy" : "xclip"
   IO.popen(command, "w") { |pipe| pipe.puts string }
