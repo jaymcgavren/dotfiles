@@ -1,0 +1,34 @@
+{
+    "global": {
+        "check_for_updates_on_startup": false,
+        "show_in_menu_bar": false
+    },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Push-to-talk",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "f8" },
+                                "to": [{ "shell_command": "osascript -e 'set volume input volume 70'" }],
+                                "to_after_key_up": [{ "shell_command": "osascript -e 'set volume input volume 0'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "left_control" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}

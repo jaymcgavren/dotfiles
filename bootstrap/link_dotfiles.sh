@@ -15,3 +15,5 @@ ln -s ${dotfiles_path}/tmux.conf ~/.tmux.conf
 ln -s ${dotfiles_path}/zprofile ~/.zprofile
 ln -s ${dotfiles_path}/zshrc ~/.zshrc
 ln -s ${dotfiles_path}/todo-txt-sh/todo.cfg ~/.todo.cfg
+mkdir ~/.config
+ln -s ${dotfiles_path}/.config/karabiner ~/.config/karabiner

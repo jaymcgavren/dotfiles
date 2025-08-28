@@ -73,6 +73,19 @@
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
+		<key>0x74-0x100000-0x11</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Apply Mode</key>
+			<integer>0</integer>
+			<key>Escaping</key>
+			<integer>2</integer>
+			<key>Text</key>
+			<string>0x03 0x70 0x66</string>
+			<key>Version</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
