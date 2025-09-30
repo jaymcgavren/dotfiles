@@ -56,7 +56,7 @@
 			<key>Escaping</key>
 			<integer>1</integer>
 			<key>Text</key>
-			<string>0x03 0x70 0x73 0x73</string>
+			<string>0x03 0x70 0x73 0x72</string>
 			<key>Version</key>
 			<integer>2</integer>
 		</dict>
