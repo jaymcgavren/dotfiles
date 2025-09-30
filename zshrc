@@ -1,3 +1,6 @@
+# Prevent Ctrl-d from closing shell.
+set -o ignoreeof
+
 # rbenv (Ruby environment) setup.
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.rbenv/bin:$PATH"
