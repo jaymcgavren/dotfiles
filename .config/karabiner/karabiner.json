@@ -12,8 +12,8 @@
                         "manipulators": [
                             {
                                 "from": { "key_code": "f8" },
-                                "to": [{ "shell_command": "osascript -e 'set volume input volume 70'" }],
-                                "to_after_key_up": [{ "shell_command": "osascript -e 'set volume input volume 0'" }],
+                                "to": [{ "shell_command": "osascript -e 'beep' -e 'set volume input volume 70'" }],
+                                "to_after_key_up": [{ "shell_command": "osascript -e 'beep' -e 'set volume input volume 0'" }],
                                 "type": "basic"
                             }
                         ]
