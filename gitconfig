@@ -5,6 +5,7 @@
 	grp = grep --break --heading --line-number
 	shove = push --force-with-lease
 	prdiff = !git diff main...
+	prfiles = !git diff --name-only main...
 	this-branch = rev-parse --abbrev-ref HEAD
 	branch-move = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
 [gui]
