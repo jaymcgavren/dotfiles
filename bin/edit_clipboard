@@ -1,0 +1,6 @@
+#!/bin/sh
+tmp=$(mktemp)
+pbpaste > "$tmp"
+"$EDITOR" "$tmp"
+cat "$tmp" | pbcopy
+rm "$tmp"
