@@ -60,3 +60,8 @@ Pry::Commands.create_command "deep-inspect" do
     @object ||= eval(args.join(" "))
   end
 end
+
+if defined?(Rails)
+  my_console_methods_file = Rails.root.join('my_console_methods.rb')
+  require my_console_methods_file if File.exist?(my_console_methods_file)
+end
