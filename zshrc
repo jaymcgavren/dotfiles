@@ -19,6 +19,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 #Path setup.
 export PATH=${HOME}/dotfiles/bin:${PATH}
 
+# Add Claude Code.
+export PATH="${HOME}/.local/bin:$PATH"
+
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH="$(brew --prefix)/bin:$PATH"
 fi
