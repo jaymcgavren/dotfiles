@@ -103,6 +103,14 @@ function toss {
   done
 }
 
+
+# bun completions
+[ -s "/Users/jay/.bun/_bun" ] && source "/Users/jay/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
   . $HOME/dotfiles_local/zshrc
