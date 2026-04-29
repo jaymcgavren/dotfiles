@@ -16,8 +16,11 @@ source $HOME/dotfiles/aliases
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-#Path setup.
+# Path setup.
 export PATH=${HOME}/dotfiles/bin:${PATH}
+
+# Add Claude Code.
+export PATH="${HOME}/.local/bin:$PATH"
 
 if [[ $OSTYPE == *darwin* ]]; then
   export PATH="$(brew --prefix)/bin:$PATH"
@@ -45,7 +48,7 @@ elif [[ $OSTYPE == *linux* ]]; then
 fi
 export PATH=${HOME}/dotfiles_local/bin:${PATH}
 
-umask 022 #Create files as read-only by group and world.
+umask 022 # Create files as read-only by group and world.
 
 setopt INTERACTIVE_COMMENTS # Allow # following typed commands.
 setopt NO_CLOBBER # Prevent > from overwriting existing files.
@@ -99,6 +102,14 @@ function toss {
     fi
   done
 }
+
+
+# bun completions
+[ -s "/Users/jay/.bun/_bun" ] && source "/Users/jay/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
