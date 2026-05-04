@@ -34,6 +34,11 @@ Always create new commits. Never use `git commit --amend`.
 ### No Redundant -C Flag
 Do not use `git -C <path>` when the current working directory is already the repository root. Just run `git` directly.
 
+## Shell
+
+### Parse JSON with jq
+Use `jq` to parse JSON output from CLI commands. Do not pipe CLI output through `python3`, `ruby`, or other languages just to extract fields from JSON.
+
 ## RSpec Conventions
 
 - Never set `subject` to anything other than an instance of the described class. Use a named local variable (e.g., `let(:result)`) for other values under test.
