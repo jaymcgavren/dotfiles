@@ -1,16 +1,8 @@
 # Prevent Ctrl-d from closing shell.
 set -o ignoreeof
 
-# rbenv (Ruby environment) setup.
-eval "$(rbenv init - --no-rehash)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# nvm (Node version manager) setup.
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-
-# nodenv setup.
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+# Mise setup.
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 source $HOME/dotfiles/aliases
 
