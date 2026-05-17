@@ -1,0 +1,15 @@
+[tools]
+# Runtimes — replaces asdf, nodenv, node-build, nvm, ruby-build
+node    = "lts"
+ruby    = "3.4"
+perl    = "latest"
+
+# CLI tools via aqua backend
+"aqua:cli/cli"                    = "latest"  # gh
+"aqua:jqlang/jq"                  = "latest"  # jq
+"aqua:junegunn/fzf"               = "latest"  # fzf
+"aqua:BurntSushi/ripgrep"         = "latest"  # ripgrep
+"aqua:phiresky/ripgrep-all"       = "latest"  # ripgrep-all
+"aqua:exercism/cli"               = "latest"  # exercism
+"aqua:CircleCI-Public/circleci-cli" = "latest" # circleci
+"aqua:stripe/stripe-cli"          = "latest"  # stripe

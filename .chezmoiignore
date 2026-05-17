@@ -1,0 +1,16 @@
+agents/
+audio.opml
+autotest
+bin/
+bootstrap/
+Brewfile
+chrome/
+crontab
+LICENSE
+osx/
+README.textile
+ruby/
+ssh/
+temp.txt
+todo-txt-sh/
+windows/

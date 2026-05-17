@@ -30,7 +30,7 @@
 	changed = red
 	untracked = cyan
 [core]
-	excludesfile = /Users/jay/dotfiles/gitexcludes
+	excludesfile = ~/.gitexcludes
 	editor = mg
 [http]
 [push]
