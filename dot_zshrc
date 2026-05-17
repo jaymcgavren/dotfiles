@@ -4,7 +4,7 @@ set -o ignoreeof
 # Mise setup.
 eval "$($HOME/.local/bin/mise activate zsh)"
 
-source $HOME/dotfiles/aliases
+source $HOME/.aliases
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
