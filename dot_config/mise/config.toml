@@ -3,6 +3,13 @@
 node    = "lts"
 ruby    = "3.4"
 perl    = "latest"
+packer  = "latest"
+
+# Package managers
+yarn    = "latest"
+
+# Security
+aws-vault = "latest"
 
 # CLI tools via aqua backend
 "aqua:cli/cli"                    = "latest"  # gh
