@@ -2,7 +2,7 @@
 set -o ignoreeof
 
 # Mise setup.
-eval "$($HOME/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 source $HOME/.aliases
 
