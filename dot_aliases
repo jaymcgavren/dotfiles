@@ -7,6 +7,7 @@ alias dotfiles_local='emacs $HOME/dotfiles_local'
 alias dtcb='date_time | cb'
 alias em=email
 alias fd=finder
+alias gscb='git switch `cb`'
 alias list='skate list --keys-only'
 alias load='skate get'
 alias we=work_email
