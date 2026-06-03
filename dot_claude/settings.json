@@ -1,0 +1,93 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(awk *)",
+      "Bash(bundle exec rspec *)",
+      "Bash(bundle exec rubocop *)",
+      "Bash(chezmoi diff *)",
+      "Bash(find *)",
+      "Bash(gh api *)",
+      "Bash(gh pr *)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(git log *)",
+      "Bash(git status:*)",
+      "Bash(grep *)",
+      "Bash(jq *)",
+      "Bash(ls *)",
+      "Bash(mise ls *)",
+      "Bash(short api *)",
+      "Bash(short story *)",
+      "Bash(wc *)",
+      "mcp__shortcut__epics-get-by-id",
+      "mcp__shortcut__stories-get-by-id",
+      "mcp__shortcut__users-get-current",
+      "Read(~/.claude/**)"
+    ],
+    "deny": [
+      "Bash(gh pr comment *)",
+      "Bash(gh issue comment *)",
+      "Bash(git add -A*)",
+      "Bash(git add --all*)",
+      "Bash(git add .)"
+    ],
+    "ask": [
+      "Bash(git commit *)"
+    ],
+    "defaultMode": "default"
+  },
+  "model": "opus",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/bundle-exec-rewrite.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/git-c-rewrite.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block-github-comment-create.sh",
+            "statusMessage": "Checking for GitHub comment creation"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/dotfiles/bin/claude_prompt.sh",
+    "padding": 2
+  },
+  "enabledPlugins": {
+    "chrome-devtools-mcp@chrome-devtools-plugins": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "busy"
+    ]
+  },
+  "verbose": true,
+  "preferredNotifChannel": "iterm2_with_bell",
+  "skipAutoPermissionPrompt": true
+}
