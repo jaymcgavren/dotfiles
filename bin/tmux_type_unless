@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# tmux_type_unless
+# Usage examples:
+#   ./tmux_type_unless --pane "myapp/0/0" --type "echo hello" --unless "already_done"
+#   ./tmux_type_unless -t "echo hello" -p "myapp/0/0" -u "already_done"
+#   ./tmux_type_unless --unless "already_done" --pane "myapp/0/0" --type "echo hello"
+#
+# Behavior:
+#   - Captures the current content of the specified tmux pane.
+#   - If BLOCKING_STRING is already visible in that pane, does nothing.
+#   - Otherwise, types STRING_TO_TYPE followed by Enter in that pane.
+
+# Default values
+TARGET=""
+STRING_TO_TYPE=""
+BLOCKING_STRING=""
+
+# Parse arguments with flags (re-positionable)
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -p|--pane)
+            TARGET="$2"
+            shift 2
+            ;;
+        -t|--type)
+            STRING_TO_TYPE="$2"
+            shift 2
+            ;;
+        -u|--unless)
+            BLOCKING_STRING="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Usage: $0 [--pane/-p] \"<session>/<window>/<pane>\" [--type/-t] \"<string_to_type>\" [--unless/-u] \"<blocking_string>\""
+            echo "Example: $0 --pane \"myapp/0/0\" --type \"echo hello\" --unless \"already_done\""
+            exit 1
+            ;;
+    esac
+done
+
+# Validate all required arguments are provided
+if [ -z "$TARGET" ] || [ -z "$STRING_TO_TYPE" ] || [ -z "$BLOCKING_STRING" ]; then
+    echo "Error: All three arguments are required."
+    echo "Usage: $0 [--pane/-p] \"<session>/<window>/<pane>\" [--type/-t] \"<string_to_type>\" [--unless/-u] \"<blocking_string>\""
+    echo "Example: $0 --pane \"myapp/0/0\" --type \"echo hello\" --unless \"already_done\""
+    exit 1
+fi
+
+# Check if pane exists
+if ! tmux list-panes -t "$TARGET" >/dev/null 2>&1; then
+    echo "Error: Could not access pane $TARGET. Make sure it exists."
+    exit 1
+fi
+
+# Capture the visible content of the target pane
+PANE_CONTENT=$(tmux capture-pane -p -t "$TARGET" 2>/dev/null)
+
+# If blocking string is already visible, skip
+if echo "$PANE_CONTENT" | grep -qF "$BLOCKING_STRING"; then
+    echo "Blocking string '$BLOCKING_STRING' is already visible in pane $TARGET. Skipping."
+    exit 0
+fi
+
+# Send the string followed by Enter to the target pane
+tmux send-keys -t "$TARGET" "$STRING_TO_TYPE" Enter
+
+echo "Sent '$STRING_TO_TYPE' to pane $TARGET"
