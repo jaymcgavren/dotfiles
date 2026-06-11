@@ -1,0 +1,35 @@
+#!/bin/sh
+#Usage: make_gif <input file> [output.gif]
+#Produce a small, low-framerate GIF from any ffmpeg-readable input (video, etc.).
+#Output defaults to the input's name with a .gif extension.
+
+if ! command -v ffmpeg >/dev/null 2>&1; then
+  echo "make_gif: ffmpeg is not installed" >&2
+  exit 1
+fi
+if ! command -v gifsicle >/dev/null 2>&1; then
+  echo "make_gif: gifsicle is not installed" >&2
+  exit 1
+fi
+
+input="$1"
+if [ -z "$input" ]; then
+  echo "Usage: make_gif <input file> [output.gif]" >&2
+  exit 65
+fi
+if [ ! -f "$input" ]; then
+  echo "make_gif: input file '$input' does not exist" >&2
+  exit 1
+fi
+
+output="$2"
+if [ -z "$output" ]; then
+  output="${input%.*}.gif"
+fi
+
+temp="$(mktemp -t make_gif).gif"
+trap 'rm -f "$temp"' EXIT
+
+ffmpeg -i "$input" -filter_complex "fps=10,scale=256:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -y "$temp" \
+  && gifsicle -O3 --lossy=80 "$temp" -o "$output" \
+  && echo "make_gif: wrote $output"
