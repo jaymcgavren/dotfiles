@@ -47,6 +47,7 @@ Use `jq` to parse JSON output from CLI commands. Do not pipe CLI output through 
 
 ## PR Workflow
 
+- Never reply directly to GitHub comments. Ask the user if you can copy a reply to the clipboard.
 - Never mark PRs as ready for review (always pass `--draft` to `gh pr create`).
 - Always use the project's `.github/pull_request_template.md` when creating PRs. Fill in the template sections (e.g. Description, Testing) based on the changes being submitted.
 
