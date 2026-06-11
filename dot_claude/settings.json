@@ -20,6 +20,7 @@
       "Bash(jq *)",
       "Bash(ls *)",
       "Bash(mise ls *)",
+      "Bash(rg *)",
       "Bash(short api *)",
       "Bash(short story *)",
       "Bash(wc *)",
