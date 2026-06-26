@@ -89,6 +89,7 @@
       "busy"
     ]
   },
+  "tui": "default",
   "verbose": true,
   "preferredNotifChannel": "iterm2_with_bell",
   "skipAutoPermissionPrompt": true
