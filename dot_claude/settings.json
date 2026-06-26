@@ -38,6 +38,7 @@
     ],
     "ask": [
       "Bash(git push *)",
+      "Bash(rails runner *)"
     ],
     "defaultMode": "default"
   },
