@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Usage:
+#   invert_image <input-image> [output-image]
+
+set -euo pipefail
+
+usage() {
+  echo "Usage: $0 <input-image> [output-image]" >&2
+  exit 1
+}
+
+if [[ $# -lt 1 || $# -gt 2 ]]; then
+  usage
+fi
+
+input="$1"
+
+if [[ ! -f "$input" ]]; then
+  echo "Error: input file '$input' does not exist." >&2
+  exit 1
+fi
+
+# Determine which ImageMagick command is available.
+if command -v magick >/dev/null 2>&1; then
+  magick_cmd=(magick)
+elif command -v convert >/dev/null 2>&1; then
+  magick_cmd=(convert)
+else
+  echo "Error: ImageMagick not found." >&2
+  exit 1
+fi
+
+# Default the output path to "<name>_inverted.<ext>" next to the input.
+if [[ $# -eq 2 ]]; then
+  output="$2"
+else
+  dir="$(dirname "$input")"
+  base="$(basename "$input")"
+  name="${base%.*}"
+  ext="${base##*.}"
+  if [[ "$name" == "$ext" ]]; then
+    # No extension on the input filename.
+    output="${dir}/${name}_inverted"
+  else
+    output="${dir}/${name}_inverted.${ext}"
+  fi
+fi
+
+# "-channel RGB" prevents it from also inverting alpha
+"${magick_cmd[@]}" "$input" -channel RGB -negate "$output"
