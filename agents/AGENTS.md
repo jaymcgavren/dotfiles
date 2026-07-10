@@ -26,6 +26,10 @@ Extract small, private helper methods for logic that can be cleanly separated. T
 ### Avoid Abbreviations
 Use full, descriptive names for variables, methods, and let bindings. Do not abbreviate unless the abbreviation is universally known (e.g., HTML, URL, ID). For example, use `point_of_contact` not `poc`.
 
+## Rails Style
+
+Avoid the use of ActiveRecord callbacks such as `before_validation` or `after_create`.
+
 ## Git
 
 ### Never Amend Commits
