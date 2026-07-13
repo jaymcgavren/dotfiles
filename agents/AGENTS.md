@@ -1,3 +1,7 @@
+# General
+
+Never, ever output emojis. They interfere with emacs, tmux, and other processes.
+
 # Personal Coding Conventions
 
 ## Ruby Style
