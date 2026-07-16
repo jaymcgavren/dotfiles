@@ -9,6 +9,9 @@ Never, ever output emojis. They interfere with emacs, tmux, and other processes.
 ### Line Length
 Keep code lines to 120 characters or fewer.
 
+### Never Add Code Comments
+Never add comments to code unless the user requests them.
+
 ### Variable Names Reflect Class Names
 Name variables after the full class name of the object(s) they hold, e.g. `subscriber_address` not `address` for `SubscriberAddress` records.
 
