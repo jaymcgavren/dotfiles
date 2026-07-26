@@ -103,6 +103,9 @@ function toss {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Claude Code
+export CLAUDE_CODE_AUTO_COMPACT_WINDOW=250000
+
 #Keep this last so it can override general settings!
 if [ -f $HOME/dotfiles_local/zshrc ]; then
   . $HOME/dotfiles_local/zshrc
