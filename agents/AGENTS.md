@@ -4,6 +4,10 @@ Use simple technical English.
 
 Never, ever output emojis. They interfere with emacs, tmux, and other processes.
 
+## Research Before Suggesting Contact
+
+Before suggesting contacting a coworker with a question, exhaust the available search tools first: search the codebase (including git history and blame), search Slack, search the project management platform, and search project documentation and internal knowledge bases. Only suggest contacting someone if those searches fail to answer the question. When you do, name the person or team, state what you searched and what was missing, and include a draft of the question so the message is as specific as possible.
+
 # Personal Coding Conventions
 
 ## Ruby Style
