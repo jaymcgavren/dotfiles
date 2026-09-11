@@ -1,9 +1,11 @@
 #!/bin/sh
 # Creates a secret Gist on GitHub, and turns the given directory (default: the
-# current one) into a checkout of that Gist. Files already in the directory are
-# left alone; they are not added or committed.
+# current one) into a checkout of that Gist. The directory is created if it
+# doesn't exist. Files already in the directory are left alone; they are not
+# added or committed.
 set -e
 
+mkdir -p "${1:-.}"
 cd "${1:-.}"
 if [ -e .git ]; then
   echo "$(pwd) is already a Git checkout."
