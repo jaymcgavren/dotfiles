@@ -39,3 +39,4 @@ ssh/
 temp.txt
 todo-txt-sh/
 windows/
+.gitconfig_local*

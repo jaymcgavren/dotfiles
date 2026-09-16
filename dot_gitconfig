@@ -45,3 +45,9 @@
 	defaultBranch = main
 [pull]
 	ff = only
+
+# Machine-local overrides, not tracked in dotfiles. Missing file is
+# silently ignored by git, so this is safe on machines without one.
+# Keep this last: later values win.
+[include]
+	path = ~/.gitconfig_local
