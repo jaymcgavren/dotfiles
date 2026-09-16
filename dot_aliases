@@ -12,6 +12,7 @@ alias gscb='git switch `cb`'
 alias list='skate list --keys-only'
 alias load='skate get'
 alias opus='claude --model opus'
+alias resume='claude --resume'
 alias s=search
 alias save='skate set'
 alias sonnet='claude --model sonnet'
