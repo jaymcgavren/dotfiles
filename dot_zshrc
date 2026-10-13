@@ -102,9 +102,6 @@ function toss {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Claude Code
-export CLAUDE_CODE_AUTO_COMPACT_WINDOW=250000
-
 # Prepend mise shims last so mise-managed tools win over macOS path_helper,
 # which reorders /usr/bin ahead of mise's dirs in /etc/zprofile.
 export PATH="$HOME/.local/share/mise/shims:$PATH"
